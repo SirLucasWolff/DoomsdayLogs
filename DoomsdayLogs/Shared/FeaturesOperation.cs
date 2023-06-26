@@ -2,6 +2,7 @@
 using DoomsdayLogs.Application.ProjectModule;
 using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.Domain.ProjectModule;
+using DoomsdayLogs.WindowsForms.Features.FilterModule;
 using DoomsdayLogs.WindowsForms.Features.LogModule;
 using DoomsdayLogs.WindowsForms.Features.ProjectModule;
 
@@ -30,6 +31,9 @@ namespace DoomsdayLogs.WindowsForms.Shared
             Project project = projectAppService.SelectAllProjects().Find(x => x.ProjectName == ProjectSelected.ProjectName);
 
             List<Log> logs = logAppService.SelectAllLogs().FindAll(x => x.ProjectId == project.Id);
+
+            if (FilterOptions.filterLogType != 0)
+                logs = logAppService.SelectAllLogs().FindAll(x => x.LogType == FilterOptions.filterLogType);
 
             logTable.UpdateRegisters(logs);
 
