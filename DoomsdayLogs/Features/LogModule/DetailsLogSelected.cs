@@ -64,9 +64,6 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
                 LogDescriptionTextBox.Clear();
                 LogDescriptionTextBox.Text = LogSelected.LogDescription;
             }
-                
-
-            
         }
     }
 }

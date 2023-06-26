@@ -82,7 +82,7 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
             return this.WithLogName("testProject")
                 .WithLogDescription("V8")
                 .WithLogDateTime(DateTime.Now)
-                .WithLogType(EnumLogType.Status)
+                .WithLogType(EnumLogType.Info)
                 .WithLogLine("Line 25")
                 .WithLogClassName("testClassName")
                 .WithLogMethodName("testMethodName")

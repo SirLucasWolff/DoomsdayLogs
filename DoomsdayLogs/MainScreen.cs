@@ -1,5 +1,6 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
+using DoomsdayLogs.WindowsForms.Features.FilterModule;
 using DoomsdayLogs.WindowsForms.Features.LogModule;
 using DoomsdayLogs.WindowsForms.Properties;
 using DoomsdayLogs.WindowsForms.Shared;
@@ -19,6 +20,7 @@ namespace DoomsdayLogs.WindowsForms
             ConfigPanelRegisters();
             SetOpenLogButtonConfig();
             Instance = this;
+            FilterOptions.filterLogType = 0;
         }
 
         private void ProjectButton_Click(object sender, EventArgs e)
@@ -139,6 +141,17 @@ namespace DoomsdayLogs.WindowsForms
 
                 ConfigPanelRegisters();
             }
+        }
+
+        private void FilterButton_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+
+            settingsForm.SetSettingsOption("Filter");
+
+            settingsForm.Text = "Filter options";
+
+            settingsForm.ShowDialog();
         }
     }
 }

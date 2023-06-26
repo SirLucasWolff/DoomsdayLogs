@@ -103,6 +103,7 @@
             FilterButton.Size = new Size(75, 38);
             FilterButton.TabIndex = 5;
             FilterButton.UseVisualStyleBackColor = false;
+            FilterButton.Click += FilterButton_Click;
             // 
             // SoldierSelectedImage
             // 
