@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomsdayLogs.WindowsForms", "DoomsdayLogs\DoomsdayLogs.WindowsForms.csproj", "{C915EE83-64F7-4CB0-ADB7-F99D2E79E093}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apresentation", "Apresentation", "{1431EFAA-2A97-4F9D-B79F-F324A97BAA52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{5196A25F-8B86-4B75-A052-918C5991FA0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{58D2C4CD-8C8E-44C9-BE20-50296F68466D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B4DE7642-1C15-4B5E-A500-8F5EECC04153}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7F5A95F0-E262-4DA4-8FE3-0BA867C34F55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomsdayLogs.DataBase", "DoomsdayLogs.DataBase\DoomsdayLogs.DataBase.csproj", "{2CFBB91A-1013-4F21-A55D-3027B7DA15A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomsdayLogs.Domain", "DoomsdayLogs.Domain\DoomsdayLogs.Domain.csproj", "{088E9B5C-5F90-407C-ABBD-7570FC83575D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAO", "DAO", "{75D07D97-2DBF-4B22-8A0F-6C7862929BB6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomsdayLogs.InfraORM", "DoomsdayLogs.InfraORM\DoomsdayLogs.InfraORM.csproj", "{66EA1516-3E26-4ED9-A5FF-F043FA75904A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomsdayLogs.ORMTest", "DoomsdayLogs.ORMTest\DoomsdayLogs.ORMTest.csproj", "{652A6C80-BCE2-42B6-A05A-AB1B53DCC404}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomsdayLogs.DataBuilderTest", "DoomsdayLogs.DataBuilderTest\DoomsdayLogs.DataBuilderTest.csproj", "{F46CE97E-2A84-4C65-AC07-A56B6413AAE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{69D45538-4B60-45BB-B18F-8DB74AFD443E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoomsdayLogs.Application", "DoomsdayLogs.Application\DoomsdayLogs.Application.csproj", "{AACA75BA-20DB-46F6-AD71-B0F054FB237E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C915EE83-64F7-4CB0-ADB7-F99D2E79E093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C915EE83-64F7-4CB0-ADB7-F99D2E79E093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C915EE83-64F7-4CB0-ADB7-F99D2E79E093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C915EE83-64F7-4CB0-ADB7-F99D2E79E093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CFBB91A-1013-4F21-A55D-3027B7DA15A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CFBB91A-1013-4F21-A55D-3027B7DA15A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CFBB91A-1013-4F21-A55D-3027B7DA15A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CFBB91A-1013-4F21-A55D-3027B7DA15A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{088E9B5C-5F90-407C-ABBD-7570FC83575D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088E9B5C-5F90-407C-ABBD-7570FC83575D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088E9B5C-5F90-407C-ABBD-7570FC83575D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088E9B5C-5F90-407C-ABBD-7570FC83575D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66EA1516-3E26-4ED9-A5FF-F043FA75904A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EA1516-3E26-4ED9-A5FF-F043FA75904A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EA1516-3E26-4ED9-A5FF-F043FA75904A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EA1516-3E26-4ED9-A5FF-F043FA75904A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{652A6C80-BCE2-42B6-A05A-AB1B53DCC404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652A6C80-BCE2-42B6-A05A-AB1B53DCC404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652A6C80-BCE2-42B6-A05A-AB1B53DCC404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652A6C80-BCE2-42B6-A05A-AB1B53DCC404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F46CE97E-2A84-4C65-AC07-A56B6413AAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F46CE97E-2A84-4C65-AC07-A56B6413AAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F46CE97E-2A84-4C65-AC07-A56B6413AAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F46CE97E-2A84-4C65-AC07-A56B6413AAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AACA75BA-20DB-46F6-AD71-B0F054FB237E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AACA75BA-20DB-46F6-AD71-B0F054FB237E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AACA75BA-20DB-46F6-AD71-B0F054FB237E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AACA75BA-20DB-46F6-AD71-B0F054FB237E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C915EE83-64F7-4CB0-ADB7-F99D2E79E093} = {1431EFAA-2A97-4F9D-B79F-F324A97BAA52}
+		{2CFBB91A-1013-4F21-A55D-3027B7DA15A8} = {5196A25F-8B86-4B75-A052-918C5991FA0E}
+		{088E9B5C-5F90-407C-ABBD-7570FC83575D} = {58D2C4CD-8C8E-44C9-BE20-50296F68466D}
+		{75D07D97-2DBF-4B22-8A0F-6C7862929BB6} = {B4DE7642-1C15-4B5E-A500-8F5EECC04153}
+		{66EA1516-3E26-4ED9-A5FF-F043FA75904A} = {75D07D97-2DBF-4B22-8A0F-6C7862929BB6}
+		{652A6C80-BCE2-42B6-A05A-AB1B53DCC404} = {7F5A95F0-E262-4DA4-8FE3-0BA867C34F55}
+		{F46CE97E-2A84-4C65-AC07-A56B6413AAE1} = {7F5A95F0-E262-4DA4-8FE3-0BA867C34F55}
+		{AACA75BA-20DB-46F6-AD71-B0F054FB237E} = {69D45538-4B60-45BB-B18F-8DB74AFD443E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1EA5E58-8C41-4AE9-A9E4-82A82B49F1E5}
+	EndGlobalSection
+EndGlobal
