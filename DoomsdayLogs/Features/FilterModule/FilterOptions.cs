@@ -25,7 +25,7 @@ namespace DoomsdayLogs.WindowsForms.Features.FilterModule
             if (SelectAllRb.Checked)
                 filterLogType = 0;
 
-            MainScreen.Instance.ConfigPanelRegisters();
+            MainScreen.Instance.ConfigPanelRegisters(false);
         }
     }
 }

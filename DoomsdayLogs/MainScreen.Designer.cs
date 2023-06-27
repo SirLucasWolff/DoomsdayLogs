@@ -30,7 +30,7 @@
         {
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            Text = new TextBox();
+            SearchText = new TextBox();
             SearchButton = new Button();
             FilterButton = new Button();
             SoldierSelectedImage = new PictureBox();
@@ -69,16 +69,16 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // Text
+            // SearchText
             // 
-            Text.BackColor = Color.Black;
-            Text.BorderStyle = BorderStyle.FixedSingle;
-            Text.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Text.ForeColor = SystemColors.Window;
-            Text.Location = new Point(302, 187);
-            Text.Name = "Text";
-            Text.Size = new Size(523, 25);
-            Text.TabIndex = 3;
+            SearchText.BackColor = Color.Black;
+            SearchText.BorderStyle = BorderStyle.FixedSingle;
+            SearchText.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            SearchText.ForeColor = SystemColors.Window;
+            SearchText.Location = new Point(302, 187);
+            SearchText.Name = "SearchText";
+            SearchText.Size = new Size(523, 25);
+            SearchText.TabIndex = 3;
             // 
             // SearchButton
             // 
@@ -91,6 +91,7 @@
             SearchButton.Size = new Size(75, 38);
             SearchButton.TabIndex = 4;
             SearchButton.UseVisualStyleBackColor = false;
+            SearchButton.Click += SearchButton_Click;
             // 
             // FilterButton
             // 
@@ -235,7 +236,7 @@
             Controls.Add(SoldierSelectedImage);
             Controls.Add(FilterButton);
             Controls.Add(SearchButton);
-            Controls.Add(Text);
+            Controls.Add(SearchText);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
             Name = "MainScreen";
@@ -251,7 +252,7 @@
         #endregion
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private TextBox Text;
+        private TextBox SearchText;
         private Button SearchButton;
         private Button FilterButton;
         private PictureBox SoldierSelectedImage;

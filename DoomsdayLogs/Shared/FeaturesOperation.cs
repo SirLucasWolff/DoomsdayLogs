@@ -26,7 +26,7 @@ namespace DoomsdayLogs.WindowsForms.Shared
             projectSettings = new ProjectSettings(projectAppService);
         }
 
-        public UserControl GetLogTable()
+        public UserControl GetLogTable(string referenceName)
         {
             Project project;
 
@@ -44,6 +44,11 @@ namespace DoomsdayLogs.WindowsForms.Shared
             if (FilterOptions.filterLogType != 0)
                 logs = logAppService.SelectAllLogs().FindAll(x => x.LogType == FilterOptions.filterLogType);
 
+            if (referenceName != "")
+            {
+                logs = logAppService.SelectLogByReference($"%{referenceName}%");
+            }
+           
             logTable.UpdateRegisters(logs);
 
             return logTable;

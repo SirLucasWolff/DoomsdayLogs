@@ -66,7 +66,7 @@ namespace DoomsdayLogs.WindowsForms.Features.ProjectModule
 
             MainScreen.Instance.SetProjectName();
 
-            MainScreen.Instance.ConfigPanelRegisters();
+            MainScreen.Instance.ConfigPanelRegisters(false);
         }
 
         private void ProjectSettings_Load(object sender, EventArgs e)

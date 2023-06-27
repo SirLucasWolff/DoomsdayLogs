@@ -6,8 +6,6 @@ using DoomsdayLogs.Domain.ProjectModule;
 using DoomsdayLogs.Infra.ORM.LogModule;
 using DoomsdayLogs.Infra.ORM.ProjectModule;
 using DoomsdayLogs.InfraORM;
-using DoomsdayLogs.WindowsForms.Features.LogModule;
-using DoomsdayLogs.WindowsForms.Features.ProjectModule;
 
 namespace DoomsdayLogs.WindowsForms.Shared
 {

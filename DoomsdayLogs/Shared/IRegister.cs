@@ -7,7 +7,7 @@ namespace DoomsdayLogs.WindowsForms.Shared
     {
         public ProjectSettings SelectProjectOperation();
 
-        UserControl GetLogTable();
+        UserControl GetLogTable(string logNamebyReference);
 
         Log GetLogSelected();
     }
