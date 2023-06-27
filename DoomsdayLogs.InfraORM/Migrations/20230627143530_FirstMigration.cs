@@ -35,9 +35,9 @@ namespace DoomsdayLogs.InfraORM.Migrations
                     LogDescription = table.Column<string>(type: "NVARCHAR(350)", nullable: true),
                     LogDateTime = table.Column<DateTime>(type: "DATETIME", nullable: true),
                     LogType = table.Column<string>(type: "NVARCHAR(50)", nullable: true),
+                    LogTypeImage = table.Column<byte[]>(type: "IMAGE", nullable: false),
                     LogLine = table.Column<string>(type: "NVARCHAR(20)", nullable: true),
                     LogClassName = table.Column<string>(type: "NVARCHAR(200)", nullable: true),
-                    LogMethodName = table.Column<string>(type: "NVARCHAR(150)", nullable: true),
                     LogHelp = table.Column<string>(type: "NVARCHAR(350)", nullable: true),
                     LogData = table.Column<string>(type: "NTEXT", nullable: true),
                     ProjectId = table.Column<int>(type: "INT", nullable: true)

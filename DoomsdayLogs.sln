@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomsdayLogs.DataBuilderTes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{69D45538-4B60-45BB-B18F-8DB74AFD443E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoomsdayLogs.Application", "DoomsdayLogs.Application\DoomsdayLogs.Application.csproj", "{AACA75BA-20DB-46F6-AD71-B0F054FB237E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomsdayLogs.Application", "DoomsdayLogs.Application\DoomsdayLogs.Application.csproj", "{AACA75BA-20DB-46F6-AD71-B0F054FB237E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

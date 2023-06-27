@@ -28,7 +28,16 @@ namespace DoomsdayLogs.WindowsForms.Shared
 
         public UserControl GetLogTable()
         {
-            Project project = projectAppService.SelectAllProjects().Find(x => x.ProjectName == ProjectSelected.ProjectName);
+            Project project;
+
+            if (ProjectSelected.ProjectName != "")
+            {
+               project = projectAppService.SelectAllProjects().Find(x => x.ProjectName == ProjectSelected.ProjectName);
+            }
+            else
+            {
+                project = projectAppService.SelectAllProjects().FirstOrDefault();
+            }
 
             List<Log> logs = logAppService.SelectAllLogs().FindAll(x => x.ProjectId == project.Id);
 

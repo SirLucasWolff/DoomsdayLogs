@@ -48,14 +48,15 @@ namespace DoomsdayLogs.InfraORM.Migrations
                     b.Property<string>("LogLine")
                         .HasColumnType("NVARCHAR(20)");
 
-                    b.Property<string>("LogMethodName")
-                        .HasColumnType("NVARCHAR(150)");
-
                     b.Property<string>("LogName")
                         .HasColumnType("NVARCHAR(150)");
 
                     b.Property<string>("LogType")
                         .HasColumnType("NVARCHAR(50)");
+
+                    b.Property<byte[]>("LogTypeImage")
+                        .IsRequired()
+                        .HasColumnType("IMAGE");
 
                     b.Property<int?>("ProjectId")
                         .HasColumnType("INT");
