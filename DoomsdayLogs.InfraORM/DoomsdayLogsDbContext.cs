@@ -2,11 +2,6 @@
 using DoomsdayLogs.Domain.ProjectModule;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Configuration;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Drawing;
 
 namespace DoomsdayLogs.InfraORM
 {

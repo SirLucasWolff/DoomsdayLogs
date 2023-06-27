@@ -343,6 +343,16 @@ namespace DoomsdayLogs.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Red_Status {
+            get {
+                object obj = ResourceManager.GetObject("Red Status", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Right {
             get {
                 object obj = ResourceManager.GetObject("Right", resourceCulture);
@@ -386,6 +396,26 @@ namespace DoomsdayLogs.WindowsForms.Properties {
         internal static System.Drawing.Bitmap Welcome_text {
             get {
                 object obj = ResourceManager.GetObject("Welcome text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap White_Status {
+            get {
+                object obj = ResourceManager.GetObject("White Status", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Yellow_Status {
+            get {
+                object obj = ResourceManager.GetObject("Yellow Status", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

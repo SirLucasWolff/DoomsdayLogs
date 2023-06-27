@@ -1,5 +1,6 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
 using Newtonsoft.Json;
+using System.Drawing;
 
 namespace DoomsdayLogs.DataBuilderTest.LogModule
 {
@@ -41,6 +42,13 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
             return this;
         }
 
+        public LogDataBuilder WithLogTypeImage()
+        {
+            Byte[] logTyppeImage = ConvertImageToBinaryLogType(GetImage(EnumLogType.Info));
+            log.LogTypeImage = logTyppeImage;
+            return this;
+        }
+
         public LogDataBuilder WithLogLine(string logLine)
         {
             log.LogLine = logLine;
@@ -50,12 +58,6 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
         public LogDataBuilder WithLogClassName(string logClassName)
         {
             log.LogClassName = logClassName;
-            return this;
-        }
-
-        public LogDataBuilder WithLogMethodName(string logMethodName)
-        {
-            log.LogMethodName = logMethodName;
             return this;
         }
 
@@ -73,7 +75,7 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
 
         public LogDataBuilder WithProjectId()
         {
-            log.ProjectId = 2;
+            log.ProjectId = 1;
             return this;
         }
 
@@ -83,9 +85,9 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
                 .WithLogDescription("V8")
                 .WithLogDateTime(DateTime.Now)
                 .WithLogType(EnumLogType.Info)
+                .WithLogTypeImage()
                 .WithLogLine("Line 25")
                 .WithLogClassName("testClassName")
-                .WithLogMethodName("testMethodName")
                 .WithLogHelp("www.google.com.br")
                 .WithLogData()
                 .WithProjectId()
@@ -97,6 +99,34 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
             public string? Name = "Maria";
 
             public int? Age = 50;
+        }
+
+        public Image GetImage(EnumLogType enumLogType)
+        {
+            string path = string.Empty;
+
+            if (enumLogType == EnumLogType.Info)
+                path = "C:\\Doomsday Logs\\DoomsdayLogs\\DoomsdayLogs\\Resources\\White Status.PNG";
+
+            if (enumLogType == EnumLogType.Error)
+                path = "C:\\Doomsday Logs\\DoomsdayLogs\\DoomsdayLogs\\Resources\\Red Status.PNG";
+
+            if (enumLogType == EnumLogType.Warning)
+                path = "C:\\Doomsday Logs\\DoomsdayLogs\\DoomsdayLogs\\Resources\\Yellow Status.PNG";
+
+            var filePath = path;
+            FileInfo fi = new FileInfo(filePath);
+            Image tempImage = Image.FromFile(fi.FullName);
+            return tempImage;
+        }
+
+        public byte[] ConvertImageToBinaryLogType(Image img)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
         }
     }
 }

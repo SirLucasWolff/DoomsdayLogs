@@ -22,9 +22,6 @@ namespace DoomsdayLogs.WindowsForms.Features.FilterModule
             if (InfoRb.Checked)
                 filterLogType = EnumLogType.Info;
 
-            if (InfoWithDataRb.Checked)
-                filterLogType = EnumLogType.InfoWithData;
-
             if (SelectAllRb.Checked)
                 filterLogType = 0;
 

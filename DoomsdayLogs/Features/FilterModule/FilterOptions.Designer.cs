@@ -31,7 +31,6 @@
             WarningRb = new RadioButton();
             ErrorRb = new RadioButton();
             InfoRb = new RadioButton();
-            InfoWithDataRb = new RadioButton();
             OkButton = new Button();
             SelectAllRb = new RadioButton();
             SuspendLayout();
@@ -41,7 +40,7 @@
             WarningRb.AutoSize = true;
             WarningRb.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             WarningRb.ForeColor = SystemColors.ButtonHighlight;
-            WarningRb.Location = new Point(159, 131);
+            WarningRb.Location = new Point(164, 155);
             WarningRb.Name = "WarningRb";
             WarningRb.Size = new Size(105, 28);
             WarningRb.TabIndex = 0;
@@ -54,7 +53,7 @@
             ErrorRb.AutoSize = true;
             ErrorRb.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             ErrorRb.ForeColor = SystemColors.ControlLightLight;
-            ErrorRb.Location = new Point(159, 191);
+            ErrorRb.Location = new Point(164, 215);
             ErrorRb.Name = "ErrorRb";
             ErrorRb.Size = new Size(75, 28);
             ErrorRb.TabIndex = 1;
@@ -67,26 +66,13 @@
             InfoRb.AutoSize = true;
             InfoRb.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             InfoRb.ForeColor = SystemColors.ControlLightLight;
-            InfoRb.Location = new Point(159, 248);
+            InfoRb.Location = new Point(164, 272);
             InfoRb.Name = "InfoRb";
             InfoRb.Size = new Size(63, 28);
             InfoRb.TabIndex = 2;
             InfoRb.TabStop = true;
             InfoRb.Text = "Info";
             InfoRb.UseVisualStyleBackColor = true;
-            // 
-            // InfoWithDataRb
-            // 
-            InfoWithDataRb.AutoSize = true;
-            InfoWithDataRb.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            InfoWithDataRb.ForeColor = SystemColors.ControlLightLight;
-            InfoWithDataRb.Location = new Point(159, 302);
-            InfoWithDataRb.Name = "InfoWithDataRb";
-            InfoWithDataRb.Size = new Size(153, 28);
-            InfoWithDataRb.TabIndex = 3;
-            InfoWithDataRb.TabStop = true;
-            InfoWithDataRb.Text = "Info with data";
-            InfoWithDataRb.UseVisualStyleBackColor = true;
             // 
             // OkButton
             // 
@@ -107,7 +93,7 @@
             SelectAllRb.AutoSize = true;
             SelectAllRb.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             SelectAllRb.ForeColor = SystemColors.ButtonHighlight;
-            SelectAllRb.Location = new Point(159, 76);
+            SelectAllRb.Location = new Point(164, 100);
             SelectAllRb.Name = "SelectAllRb";
             SelectAllRb.Size = new Size(113, 28);
             SelectAllRb.TabIndex = 6;
@@ -122,7 +108,6 @@
             BackColor = Color.Transparent;
             Controls.Add(SelectAllRb);
             Controls.Add(OkButton);
-            Controls.Add(InfoWithDataRb);
             Controls.Add(InfoRb);
             Controls.Add(ErrorRb);
             Controls.Add(WarningRb);
@@ -137,7 +122,6 @@
         private RadioButton WarningRb;
         private RadioButton ErrorRb;
         private RadioButton InfoRb;
-        private RadioButton InfoWithDataRb;
         private Button OkButton;
         private RadioButton SelectAllRb;
     }

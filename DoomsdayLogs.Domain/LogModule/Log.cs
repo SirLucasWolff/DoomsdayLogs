@@ -13,11 +13,11 @@ namespace DoomsdayLogs.Domain.LogModule
 
         public EnumLogType? LogType { get; set; }
 
+        public Byte[] LogTypeImage { get; set; }
+
         public string? LogLine { get; set; }
 
         public string? LogClassName { get; set; }
-
-        public string? LogMethodName { get; set; }
 
         public string? LogHelp { get; set; }
 
@@ -27,7 +27,7 @@ namespace DoomsdayLogs.Domain.LogModule
 
         public Project Project { get; set; }
 
-        public Log(string logName, string logDescription, DateTime logDateTime, EnumLogType logType, string? logLine, string? logClassName, string? logMethodName, string? logHelp, Project project)
+        public Log(string logName, string logDescription, DateTime logDateTime, EnumLogType logType, string? logLine, string? logClassName, string? logHelp, Project project, byte[] logTypeImage)
         {
             LogName = logName;
             LogDescription = logDescription;
@@ -35,14 +35,14 @@ namespace DoomsdayLogs.Domain.LogModule
             LogType = logType;
             LogLine = logLine;
             LogClassName = logClassName;
-            LogMethodName = logMethodName;
             LogHelp = logHelp;
             Project = project;
             if (Project != null)
                 ProjectId = project.Id;
+            LogTypeImage = logTypeImage;
         }
 
-        public Log(string logName, string logDescription, DateTime logDateTime, EnumLogType logType, string logData, Project project)
+        public Log(string logName, string logDescription, DateTime logDateTime, EnumLogType logType, string logData, Project project, byte[] logTypeImage)
         {
             LogName = logName;
             LogDescription = logDescription;
@@ -52,6 +52,7 @@ namespace DoomsdayLogs.Domain.LogModule
             Project = project;
             if (Project != null)
                 ProjectId = project.Id;
+            LogTypeImage = logTypeImage;
         }
 
         public Log() { }

@@ -25,6 +25,8 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
                 new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id"},
 
                 new DataGridViewTextBoxColumn { DataPropertyName = "LogName", HeaderText = "Log Name"},
+
+                 new DataGridViewImageColumn { DataPropertyName = "LogTypeImage", HeaderText = "Log Type"},
             };
 
             return colunas;
