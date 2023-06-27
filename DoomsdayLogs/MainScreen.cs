@@ -17,7 +17,7 @@ namespace DoomsdayLogs.WindowsForms
         {
             InitializeComponent();
             SetProjectName();
-            ConfigPanelRegisters();
+            ConfigPanelRegisters(false);
             SetOpenLogButtonConfig();
             Instance = this;
             FilterOptions.filterLogType = 0;
@@ -39,9 +39,17 @@ namespace DoomsdayLogs.WindowsForms
             OpenLogSelectedButton.Name = "Select Log";
         }
 
-        public void ConfigPanelRegisters()
+        public void ConfigPanelRegisters(bool isSearchByReference)
         {
-            UserControl table = AutoFacBuilder.Register.GetLogTable();
+            UserControl table = null;
+
+            if (isSearchByReference)
+            {
+                table = AutoFacBuilder.Register.GetLogTable(SearchText.Text);
+            }
+            else
+                table = AutoFacBuilder.Register.GetLogTable("");
+
             table.Dock = DockStyle.Fill;
 
             DataGridViewPanel.Controls.Clear();
@@ -139,7 +147,7 @@ namespace DoomsdayLogs.WindowsForms
 
                 OpenLogSelectedButton.Image = Resources.Right;
 
-                ConfigPanelRegisters();
+                ConfigPanelRegisters(false);
             }
         }
 
@@ -152,6 +160,11 @@ namespace DoomsdayLogs.WindowsForms
             settingsForm.Text = "Filter options";
 
             settingsForm.ShowDialog();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            ConfigPanelRegisters(true);
         }
     }
 }

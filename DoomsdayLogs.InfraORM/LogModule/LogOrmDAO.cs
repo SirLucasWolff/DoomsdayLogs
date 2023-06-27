@@ -25,5 +25,46 @@ namespace DoomsdayLogs.Infra.ORM.LogModule
                 return ClientList.Exists(x => x.LogName == logName);
             }
         }
+
+        public List<Log> GetByReference(string name)
+        {
+            try
+            {
+                char[] delimeters = new char[] { '%' };
+
+                var nameFormated = name.Split(delimeters);
+
+                string getNewName = null;
+
+                foreach (var item in nameFormated)
+                {
+                    if (item != "")
+                        getNewName = item;
+                }
+
+                List<Log> logSelected = dbContext.LogDB.ToList();
+
+                if (getNewName == null)
+                    return logSelected;
+
+                bool result = false;
+
+                List<Log> returLogs = new List<Log>();
+
+                foreach (var movie in logSelected)
+                {
+                    result = movie.LogName.ToLower().Contains(getNewName);
+
+                    if (result != false)
+                        returLogs.Add(movie);
+                }
+
+                return returLogs;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
