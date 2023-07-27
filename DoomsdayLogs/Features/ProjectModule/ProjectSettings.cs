@@ -23,8 +23,6 @@ namespace DoomsdayLogs.WindowsForms.Features.ProjectModule
         {
             var colunas = new DataGridViewColumn[]
             {
-                new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id"},
-
                 new DataGridViewTextBoxColumn { DataPropertyName = "ProjectName", HeaderText = "Project Name"},
 
                 new DataGridViewTextBoxColumn { DataPropertyName = "ProjectVersion", HeaderText = "Project Version"},
@@ -33,9 +31,9 @@ namespace DoomsdayLogs.WindowsForms.Features.ProjectModule
             return colunas;
         }
 
-        public int GetIdSelected()
+        public object GetProjectNameSelected()
         {
-            return ProjectsDataGrid.SelectId<int>();
+            return ProjectsDataGrid.SelectTheValueObject();
         }
 
         public void UpdateRegisters(List<Project> projects)
@@ -50,9 +48,16 @@ namespace DoomsdayLogs.WindowsForms.Features.ProjectModule
 
         private void SelectProjectButton_Click(object sender, EventArgs e)
         {
-            int id = GetIdSelected();
+            object obj = GetProjectNameSelected();
 
-            Project projectSelected = projectAppService.SelectByProjectId(id);
+            if (obj == null)
+            {
+                MessageBox.Show("Select a project that exist", "Project selection",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            Project projectSelected = projectAppService.SelectProjectByName(obj.ToString());
 
             ProjectSelected.ProjectName = projectSelected.ProjectName;
 

@@ -81,8 +81,8 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
 
         public Log GenerateCompleteLog()
         {
-            return this.WithLogName("testProject")
-                .WithLogDescription("V8")
+            return this.WithLogName("Daniel")
+                .WithLogDescription("lalalallalalalalalala")
                 .WithLogDateTime(DateTime.Now)
                 .WithLogType(EnumLogType.Info)
                 .WithLogTypeImage()

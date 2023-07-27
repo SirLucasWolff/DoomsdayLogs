@@ -2,7 +2,6 @@
 using DoomsdayLogs.Application.ProjectModule;
 using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.Domain.ProjectModule;
-using DoomsdayLogs.WindowsForms.Features.FilterModule;
 using DoomsdayLogs.WindowsForms.Features.LogModule;
 using DoomsdayLogs.WindowsForms.Features.ProjectModule;
 
@@ -32,23 +31,37 @@ namespace DoomsdayLogs.WindowsForms.Shared
 
             if (ProjectSelected.ProjectName != "")
             {
-               project = projectAppService.SelectAllProjects().Find(x => x.ProjectName == ProjectSelected.ProjectName);
+                project = projectAppService.SelectAllProjects().Find(x => x.ProjectName == ProjectSelected.ProjectName);
             }
             else
             {
                 project = projectAppService.SelectAllProjects().FirstOrDefault();
+                ProjectSelected.ProjectName = project.ProjectName;
             }
 
             List<Log> logs = logAppService.SelectAllLogs().FindAll(x => x.ProjectId == project.Id);
 
-            if (FilterOptions.filterLogType != 0)
-                logs = logAppService.SelectAllLogs().FindAll(x => x.LogType == FilterOptions.filterLogType);
+            if (MainScreen.filterLogType != 0)
+            {
+                logs = logAppService.SelectAllLogs().FindAll(x => x.LogType == MainScreen.filterLogType).FindAll(x => x.ProjectId == project.Id);
+            }
+               
 
             if (referenceName != "")
             {
-                logs = logAppService.SelectLogByReference($"%{referenceName}%");
+                logs = logAppService.SelectLogByReference($"%{referenceName}%").FindAll(x => x.ProjectId == project.Id);
             }
-           
+
+            switch (FilterDateTime.filterDateTime)
+            {
+                case FilterDateTime.FilterDateTimeEnum.LastDateTime:
+                    logs = logs.OrderByDescending(x => x.LogDateTime).ToList();
+                    break;
+                case FilterDateTime.FilterDateTimeEnum.OldDateTime:
+                    logs = logs.OrderBy(x => x.LogDateTime).ToList();
+                    break;
+            }
+
             logTable.UpdateRegisters(logs);
 
             return logTable;
@@ -61,18 +74,18 @@ namespace DoomsdayLogs.WindowsForms.Shared
 
         public Log GetLogSelected()
         {
-            int id = logTable.GetIdSelected();
+            object obj = logTable.GetObjectSelected();
 
-            if (id == 0)
+            if (obj == null)
             {
                 MessageBox.Show("Select a log to see the informations", "Log selection",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return null;
             }
 
-            Log logSelected = logAppService.SelectLogById(id);
+            Log log = logAppService.SelectLogByName(obj.ToString());
 
-            return logSelected;
+            return log;
         }
     }
 }

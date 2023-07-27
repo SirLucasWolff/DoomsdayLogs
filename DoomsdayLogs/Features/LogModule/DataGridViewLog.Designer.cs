@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)DataGridView).BeginInit();
             SuspendLayout();
             // 
             // DataGridView
             // 
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(192, 64, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 128, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(192, 64, 0);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Olive;
+            DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DataGridView.BackgroundColor = Color.Black;
             DataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGridView.Location = new Point(0, 0);

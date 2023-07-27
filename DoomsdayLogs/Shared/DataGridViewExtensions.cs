@@ -56,15 +56,15 @@
             };
         }
 
-        public static T SelectId<T>(this DataGridView grid)
+        public static object SelectTheValueObject(this DataGridView grid)
         {
             const int firstLine = 0, firstColumn = 0;
             if (grid.SelectedRows.Count == 0)
-                return default(T);
+                return null;
 
             object value = grid.SelectedRows[firstLine].Cells[firstColumn].Value;
 
-            return (T)Convert.ChangeType(value, typeof(T));
+            return value;
         }
     }
 }

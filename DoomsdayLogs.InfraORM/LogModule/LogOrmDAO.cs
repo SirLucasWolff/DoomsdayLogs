@@ -63,7 +63,20 @@ namespace DoomsdayLogs.Infra.ORM.LogModule
             }
             catch (Exception ex)
             {
-                return null;
+                return new List<Log>();
+            }
+        }
+
+        public Log SelectByLogName(string logName)
+        {
+            try
+            {
+                Log? log = dbContext.LogDB.ToList().Find(x => x.LogName == logName);
+                return log;
+            }
+            catch (Exception ex) 
+            {
+                return new Log();
             }
         }
     }

@@ -1,6 +1,5 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
-using DoomsdayLogs.WindowsForms.Features.FilterModule;
 using DoomsdayLogs.WindowsForms.Features.LogModule;
 using DoomsdayLogs.WindowsForms.Properties;
 using DoomsdayLogs.WindowsForms.Shared;
@@ -13,14 +12,17 @@ namespace DoomsdayLogs.WindowsForms
     {
         public static MainScreen Instance;
 
+        public static EnumLogType filterLogType { get; set; }
+
         public MainScreen()
         {
             InitializeComponent();
-            SetProjectName();
             ConfigPanelRegisters(false);
+            SetProjectName();
             SetOpenLogButtonConfig();
             Instance = this;
-            FilterOptions.filterLogType = 0;
+            filterLogType = 0;
+            FilterPanel.Visible = false;
         }
 
         private void ProjectButton_Click(object sender, EventArgs e)
@@ -140,6 +142,14 @@ namespace DoomsdayLogs.WindowsForms
                 OpenLogSelectedButton.Image = Resources.Left;
 
                 OpenLogSelectedButton.Name = "Back log";
+
+                SearchText.Enabled = false;
+
+                SearchButton.Enabled = false;
+
+                FilterButton.Enabled = false;
+
+                ProjectButton.Enabled = false;
             }
             else
             {
@@ -147,24 +157,79 @@ namespace DoomsdayLogs.WindowsForms
 
                 OpenLogSelectedButton.Image = Resources.Right;
 
+                SearchText.Enabled = true;
+
+                SearchButton.Enabled = true;
+
+                FilterButton.Enabled = true;
+
+                ProjectButton.Enabled = true;
+
                 ConfigPanelRegisters(false);
             }
         }
 
         private void FilterButton_Click(object sender, EventArgs e)
         {
-            SettingsForm settingsForm = new SettingsForm();
-
-            settingsForm.SetSettingsOption("Filter");
-
-            settingsForm.Text = "Filter options";
-
-            settingsForm.ShowDialog();
+            if (FilterPanel.Visible == false)
+                FilterPanel.Visible = true;
+            else
+                FilterPanel.Visible = false;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
             ConfigPanelRegisters(true);
+        }
+
+        private void SelectAllRb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SelectAllRb.Checked)
+            {
+                filterLogType = 0;
+                ConfigPanelRegisters(false);
+            }
+        }
+
+        private void WarningRb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (WarningRb.Checked)
+            {
+                filterLogType = EnumLogType.Warning;
+                ConfigPanelRegisters(false);
+            }
+        }
+
+        private void ErrorRb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ErrorRb.Checked)
+            {
+                filterLogType = EnumLogType.Error;
+                ConfigPanelRegisters(false);
+            }
+        }
+
+        private void InfoRb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (InfoRb.Checked)
+            {
+                filterLogType = EnumLogType.Info;
+                ConfigPanelRegisters(false);
+            }
+        }
+
+        private void LastDateRb_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterDateTime.filterDateTime = FilterDateTime.FilterDateTimeEnum.LastDateTime;
+
+            ConfigPanelRegisters(false);
+        }
+
+        private void OldDateRb_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterDateTime.filterDateTime = FilterDateTime.FilterDateTimeEnum.OldDateTime;
+
+            ConfigPanelRegisters(false);
         }
     }
 }

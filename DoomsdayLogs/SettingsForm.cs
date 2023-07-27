@@ -1,7 +1,4 @@
-﻿using Autofac;
-using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
-using DoomsdayLogs.WindowsForms.Features.FilterModule;
-using DoomsdayLogs.WindowsForms.Features.ProjectModule;
+﻿using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
 using DoomsdayLogs.WindowsForms.Shared;
 
 namespace DoomsdayLogs.WindowsForms
@@ -17,16 +14,11 @@ namespace DoomsdayLogs.WindowsForms
         {
             ConfigurationMenu configurationMenu = new ConfigurationMenu();
 
-            FilterOptions filterOptions = new FilterOptions();
-
             if (option == "Project")
                 SettingsPanel.Controls.Add(AutoFacBuilder.Register.SelectProjectOperation());
 
             if (option == "Configuration")
                 SettingsPanel.Controls.Add(configurationMenu);
-
-            if (option == "Filter")
-                SettingsPanel.Controls.Add(filterOptions);
         }
     }
 }

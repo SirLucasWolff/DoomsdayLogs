@@ -1,5 +1,4 @@
 ﻿using DoomsdayLogs.Application.LogModule;
-using DoomsdayLogs.Application.ProjectModule;
 using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.WindowsForms.Shared;
 
@@ -22,19 +21,19 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
         {
             var colunas = new DataGridViewColumn[]
             {
-                new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Id"},
-
                 new DataGridViewTextBoxColumn { DataPropertyName = "LogName", HeaderText = "Log Name"},
 
-                 new DataGridViewImageColumn { DataPropertyName = "LogTypeImage", HeaderText = "Log Type"},
+                new DataGridViewTextBoxColumn { DataPropertyName = "LogDateTime", HeaderText = "Log Date"},
+
+                new DataGridViewImageColumn { DataPropertyName = "LogTypeImage", HeaderText = "Log Type"},
             };
 
             return colunas;
         }
 
-        public int GetIdSelected()
+        public object GetObjectSelected()
         {
-            return DataGridView.SelectId<int>();
+            return DataGridView.SelectTheValueObject();
         }
 
         public void UpdateRegisters(List<Log> logs)

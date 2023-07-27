@@ -1,4 +1,5 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
+using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace DoomsdayLogs.WindowsForms.Features.LogModule
@@ -12,6 +13,7 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
             InitializeComponent();
             this.LogSelected = logSelected;
             SetLogInformations();
+            JsonViewer.Visible = false;
         }
 
         private void SetLogInformations()
@@ -24,7 +26,7 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
 
             LogHelpText.Text = LogSelected.LogHelp;
 
-            LogDescriptionTextBox.Text = LogSelected.LogDescription;
+            LogDescriptionText.Text = LogSelected.LogDescription;
         }
 
         private void CreateNotePadButton_Click(object sender, EventArgs e)
@@ -34,18 +36,8 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 StreamWriter file = new StreamWriter(dialog.FileName + "\\" + LogSelected.LogName);
-                file.Write($"Name = {LogSelected.LogName}\n" +
-                           $"Description = {LogSelected.LogDescription}\n" +
-                           $"Date time = {LogSelected.LogDateTime}\n" +
-                           $"Type = {LogSelected.LogType}\n" +
-                           $"Line = {LogSelected.LogLine}\n" +
-                           $"Class Name = {LogSelected.LogClassName}\n" +
-                           $"Method Name = {LogSelected.LogClassName}\n" +
-                           $"Help = {LogSelected.LogHelp}\n" +
-                           $"Data = {LogSelected.LogData}\n" +
-                           $"Project ID = {LogSelected.ProjectId}");
+                file.Write(new NotePadOptions().SetNotePadFields(LogSelected));
                 file.Close();
-
             }
         }
 
@@ -53,16 +45,15 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
         {
             if (ChangeTextBoxButton.Text == "See log datas")
             {
+                JsonViewer.Visible = true;
                 ChangeTextBoxButton.Text = "See log description";
-                LogDescriptionTextBox.Clear();
-                LogDescriptionTextBox.Text = LogSelected.LogData;
+                LogDescriptionText.Text = LogSelected.LogData;
             }
-
             else
             {
                 ChangeTextBoxButton.Text = "See log datas";
-                LogDescriptionTextBox.Clear();
-                LogDescriptionTextBox.Text = LogSelected.LogDescription;
+                JsonViewer.Visible = false;
+                LogDescriptionText.Text = LogSelected.LogDescription;
             }
         }
     }

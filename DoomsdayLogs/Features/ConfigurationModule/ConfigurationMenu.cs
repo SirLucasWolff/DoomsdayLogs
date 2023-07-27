@@ -26,7 +26,6 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
                 LineCB.Checked = true;
                 TypeCB.Checked = true;
                 ClassNameCB.Checked = true;
-                MethodNameCB.Checked = true;
                 HelpCB.Checked = true;
                 DataCB.Checked = true;
                 ProjectIdCB.Checked = true;
@@ -50,9 +49,6 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
 
                 if (notePadOptionsSelected.Contains("ClassName"))
                     ClassNameCB.Checked = true;
-
-                if (notePadOptionsSelected.Contains("MethodName"))
-                    MethodNameCB.Checked = true;
 
                 if (notePadOptionsSelected.Contains("Help"))
                     HelpCB.Checked = true;
@@ -116,14 +112,6 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
                 checkBoxToSave.Add("ClassName");
             else
                 checkBoxToSave.Remove("ClassName");
-        }
-
-        private void MethodNameCB_CheckedChanged(object sender, EventArgs e)
-        {
-            if (MethodNameCB.Checked == true)
-                checkBoxToSave.Add("MethodName");
-            else
-                checkBoxToSave.Remove("MethodName");
         }
 
         private void HelpCB_CheckedChanged(object sender, EventArgs e)

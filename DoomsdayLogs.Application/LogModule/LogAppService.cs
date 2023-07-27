@@ -49,5 +49,18 @@ namespace DoomsdayLogs.Application.LogModule
                 return null;
             }
         }
+
+        public Log SelectLogByName(string logName)
+        {
+            try
+            {
+                Log log = logRepository.SelectByLogName(logName);
+                return log;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
