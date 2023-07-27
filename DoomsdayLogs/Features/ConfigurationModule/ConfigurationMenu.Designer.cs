@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
-            AccessbilityTab = new TabPage();
-            AboutTab = new TabPage();
             NotePadOptions = new TabPage();
             ProjectIdCB = new CheckBox();
             DataCB = new CheckBox();
             HelpCB = new CheckBox();
-            MethodNameCB = new CheckBox();
             ClassNameCB = new CheckBox();
             LineCB = new CheckBox();
             TypeCB = new CheckBox();
@@ -43,40 +39,15 @@
             DescriptionCB = new CheckBox();
             label1 = new Label();
             NameCB = new CheckBox();
-            tabControl1.SuspendLayout();
+            AboutTab = new TabPage();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            tabControl1 = new TabControl();
             NotePadOptions.SuspendLayout();
+            AboutTab.SuspendLayout();
+            tabControl1.SuspendLayout();
             SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(AccessbilityTab);
-            tabControl1.Controls.Add(AboutTab);
-            tabControl1.Controls.Add(NotePadOptions);
-            tabControl1.Location = new Point(-5, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(494, 464);
-            tabControl1.TabIndex = 3;
-            // 
-            // AccessbilityTab
-            // 
-            AccessbilityTab.Location = new Point(4, 24);
-            AccessbilityTab.Name = "AccessbilityTab";
-            AccessbilityTab.Padding = new Padding(3);
-            AccessbilityTab.Size = new Size(486, 436);
-            AccessbilityTab.TabIndex = 0;
-            AccessbilityTab.Text = "Accessbility";
-            AccessbilityTab.UseVisualStyleBackColor = true;
-            // 
-            // AboutTab
-            // 
-            AboutTab.Location = new Point(4, 24);
-            AboutTab.Name = "AboutTab";
-            AboutTab.Padding = new Padding(3);
-            AboutTab.Size = new Size(486, 436);
-            AboutTab.TabIndex = 1;
-            AboutTab.Text = "About";
-            AboutTab.UseVisualStyleBackColor = true;
             // 
             // NotePadOptions
             // 
@@ -84,7 +55,6 @@
             NotePadOptions.Controls.Add(ProjectIdCB);
             NotePadOptions.Controls.Add(DataCB);
             NotePadOptions.Controls.Add(HelpCB);
-            NotePadOptions.Controls.Add(MethodNameCB);
             NotePadOptions.Controls.Add(ClassNameCB);
             NotePadOptions.Controls.Add(LineCB);
             NotePadOptions.Controls.Add(TypeCB);
@@ -106,7 +76,7 @@
             ProjectIdCB.AutoSize = true;
             ProjectIdCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ProjectIdCB.ForeColor = SystemColors.ControlLightLight;
-            ProjectIdCB.Location = new Point(362, 104);
+            ProjectIdCB.Location = new Point(362, 70);
             ProjectIdCB.Name = "ProjectIdCB";
             ProjectIdCB.Size = new Size(92, 22);
             ProjectIdCB.TabIndex = 10;
@@ -119,7 +89,7 @@
             DataCB.AutoSize = true;
             DataCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DataCB.ForeColor = SystemColors.ControlLightLight;
-            DataCB.Location = new Point(362, 70);
+            DataCB.Location = new Point(205, 172);
             DataCB.Name = "DataCB";
             DataCB.Size = new Size(61, 22);
             DataCB.TabIndex = 9;
@@ -132,26 +102,13 @@
             HelpCB.AutoSize = true;
             HelpCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             HelpCB.ForeColor = SystemColors.ControlLightLight;
-            HelpCB.Location = new Point(205, 172);
+            HelpCB.Location = new Point(205, 138);
             HelpCB.Name = "HelpCB";
             HelpCB.Size = new Size(59, 22);
             HelpCB.TabIndex = 8;
             HelpCB.Text = "Help";
             HelpCB.UseVisualStyleBackColor = true;
             HelpCB.CheckedChanged += HelpCB_CheckedChanged;
-            // 
-            // MethodNameCB
-            // 
-            MethodNameCB.AutoSize = true;
-            MethodNameCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            MethodNameCB.ForeColor = SystemColors.ControlLightLight;
-            MethodNameCB.Location = new Point(205, 138);
-            MethodNameCB.Name = "MethodNameCB";
-            MethodNameCB.Size = new Size(122, 22);
-            MethodNameCB.TabIndex = 7;
-            MethodNameCB.Text = "Method name";
-            MethodNameCB.UseVisualStyleBackColor = true;
-            MethodNameCB.CheckedChanged += MethodNameCB_CheckedChanged;
             // 
             // ClassNameCB
             // 
@@ -242,6 +199,63 @@
             NameCB.UseVisualStyleBackColor = true;
             NameCB.CheckedChanged += NameCB_CheckedChanged;
             // 
+            // AboutTab
+            // 
+            AboutTab.BackgroundImage = Properties.Resources.Doomsday_background_image;
+            AboutTab.Controls.Add(label4);
+            AboutTab.Controls.Add(label3);
+            AboutTab.Controls.Add(label2);
+            AboutTab.Location = new Point(4, 24);
+            AboutTab.Name = "AboutTab";
+            AboutTab.Padding = new Padding(3);
+            AboutTab.Size = new Size(486, 436);
+            AboutTab.TabIndex = 1;
+            AboutTab.Text = "About";
+            AboutTab.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ControlLightLight;
+            label4.Location = new Point(19, 365);
+            label4.Name = "label4";
+            label4.Size = new Size(140, 24);
+            label4.TabIndex = 4;
+            label4.Text = "Version: 6.6.6";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ControlLightLight;
+            label3.Location = new Point(152, 184);
+            label3.Name = "label3";
+            label3.Size = new Size(162, 24);
+            label3.TabIndex = 3;
+            label3.Text = "Doomsday Logs";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(106, 148);
+            label2.Name = "label2";
+            label2.Size = new Size(262, 24);
+            label2.TabIndex = 2;
+            label2.Text = "A SirLucasProductions tool";
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(AboutTab);
+            tabControl1.Controls.Add(NotePadOptions);
+            tabControl1.Location = new Point(-5, 0);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(494, 464);
+            tabControl1.TabIndex = 3;
+            // 
             // ConfigurationMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -250,27 +264,31 @@
             Controls.Add(tabControl1);
             Name = "ConfigurationMenu";
             Size = new Size(492, 464);
-            tabControl1.ResumeLayout(false);
             NotePadOptions.ResumeLayout(false);
             NotePadOptions.PerformLayout();
+            AboutTab.ResumeLayout(false);
+            AboutTab.PerformLayout();
+            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private TabControl tabControl1;
-        private TabPage AccessbilityTab;
-        private TabPage AboutTab;
+
         private TabPage NotePadOptions;
-        private CheckBox NameCB;
-        private Label label1;
         private CheckBox ProjectIdCB;
         private CheckBox DataCB;
         private CheckBox HelpCB;
-        private CheckBox MethodNameCB;
         private CheckBox ClassNameCB;
         private CheckBox LineCB;
         private CheckBox TypeCB;
         private CheckBox DateTimeCB;
         private CheckBox DescriptionCB;
+        private Label label1;
+        private CheckBox NameCB;
+        private TabPage AboutTab;
+        private TabControl tabControl1;
+        private Label label4;
+        private Label label3;
+        private Label label2;
     }
 }

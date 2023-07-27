@@ -43,15 +43,24 @@
             DataGridViewPanel = new Panel();
             OpenLogSelectedButton = new Button();
             ProjectNameSelected = new Label();
+            FilterPanel = new Panel();
+            panel2 = new Panel();
+            OldDateRb = new RadioButton();
+            LastDateRb = new RadioButton();
+            SelectAllRb = new RadioButton();
+            InfoRb = new RadioButton();
+            ErrorRb = new RadioButton();
+            WarningRb = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SoldierSelectedImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SoldierNameSelectedImage).BeginInit();
+            FilterPanel.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.New_back_bar;
+            pictureBox1.Image = Properties.Resources.New_back_bar_edited_2;
             pictureBox1.Location = new Point(17, 18);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1173, 108);
@@ -61,7 +70,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.New_back_bar_2;
+            pictureBox2.Image = Properties.Resources.New_back_bar_4;
             pictureBox2.Location = new Point(16, 172);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(1173, 535);
@@ -109,7 +118,8 @@
             // SoldierSelectedImage
             // 
             SoldierSelectedImage.BackColor = Color.FromArgb(134, 0, 27);
-            SoldierSelectedImage.Location = new Point(539, 18);
+            SoldierSelectedImage.BackgroundImage = Properties.Resources.new_frame_to_back_on_the_image;
+            SoldierSelectedImage.Location = new Point(546, 18);
             SoldierSelectedImage.Name = "SoldierSelectedImage";
             SoldierSelectedImage.Size = new Size(115, 108);
             SoldierSelectedImage.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -132,7 +142,7 @@
             // SoldierNameSelectedImage
             // 
             SoldierNameSelectedImage.Image = Properties.Resources.New_back_bar_3;
-            SoldierNameSelectedImage.Location = new Point(469, 132);
+            SoldierNameSelectedImage.Location = new Point(478, 132);
             SoldierNameSelectedImage.Name = "SoldierNameSelectedImage";
             SoldierNameSelectedImage.Size = new Size(250, 21);
             SoldierNameSelectedImage.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -157,9 +167,9 @@
             ProjectButton.Font = new Font("Arial", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             ProjectButton.ForeColor = Color.FromArgb(134, 0, 27);
             ProjectButton.Image = Properties.Resources.Project_image;
-            ProjectButton.Location = new Point(722, 48);
+            ProjectButton.Location = new Point(845, 41);
             ProjectButton.Name = "ProjectButton";
-            ProjectButton.Size = new Size(293, 45);
+            ProjectButton.Size = new Size(61, 54);
             ProjectButton.TabIndex = 10;
             ProjectButton.UseVisualStyleBackColor = false;
             ProjectButton.Click += ProjectButton_Click;
@@ -219,11 +229,120 @@
             ProjectNameSelected.TabIndex = 15;
             ProjectNameSelected.Text = "label1";
             // 
+            // FilterPanel
+            // 
+            FilterPanel.BackColor = Color.FromArgb(134, 0, 27);
+            FilterPanel.BackgroundImageLayout = ImageLayout.Center;
+            FilterPanel.Controls.Add(panel2);
+            FilterPanel.Controls.Add(OldDateRb);
+            FilterPanel.Controls.Add(LastDateRb);
+            FilterPanel.Controls.Add(SelectAllRb);
+            FilterPanel.Controls.Add(InfoRb);
+            FilterPanel.Controls.Add(ErrorRb);
+            FilterPanel.Controls.Add(WarningRb);
+            FilterPanel.Location = new Point(963, 179);
+            FilterPanel.Name = "FilterPanel";
+            FilterPanel.Size = new Size(149, 188);
+            FilterPanel.TabIndex = 16;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Black;
+            panel2.Location = new Point(3, 117);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(143, 10);
+            panel2.TabIndex = 13;
+            // 
+            // OldDateRb
+            // 
+            OldDateRb.AutoSize = true;
+            OldDateRb.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            OldDateRb.ForeColor = SystemColors.ButtonHighlight;
+            OldDateRb.Location = new Point(29, 161);
+            OldDateRb.Name = "OldDateRb";
+            OldDateRb.Size = new Size(85, 22);
+            OldDateRb.TabIndex = 12;
+            OldDateRb.TabStop = true;
+            OldDateRb.Text = "Old date";
+            OldDateRb.UseVisualStyleBackColor = true;
+            OldDateRb.CheckedChanged += OldDateRb_CheckedChanged;
+            // 
+            // LastDateRb
+            // 
+            LastDateRb.AutoSize = true;
+            LastDateRb.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LastDateRb.ForeColor = SystemColors.ButtonHighlight;
+            LastDateRb.Location = new Point(29, 133);
+            LastDateRb.Name = "LastDateRb";
+            LastDateRb.Size = new Size(91, 22);
+            LastDateRb.TabIndex = 11;
+            LastDateRb.TabStop = true;
+            LastDateRb.Text = "Last date";
+            LastDateRb.UseVisualStyleBackColor = true;
+            LastDateRb.CheckedChanged += LastDateRb_CheckedChanged;
+            // 
+            // SelectAllRb
+            // 
+            SelectAllRb.AutoSize = true;
+            SelectAllRb.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SelectAllRb.ForeColor = SystemColors.ButtonHighlight;
+            SelectAllRb.Location = new Point(29, 3);
+            SelectAllRb.Name = "SelectAllRb";
+            SelectAllRb.Size = new Size(89, 22);
+            SelectAllRb.TabIndex = 10;
+            SelectAllRb.TabStop = true;
+            SelectAllRb.Text = "Select all";
+            SelectAllRb.UseVisualStyleBackColor = true;
+            SelectAllRb.CheckedChanged += SelectAllRb_CheckedChanged;
+            // 
+            // InfoRb
+            // 
+            InfoRb.AutoSize = true;
+            InfoRb.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            InfoRb.ForeColor = SystemColors.ControlLightLight;
+            InfoRb.Location = new Point(29, 87);
+            InfoRb.Name = "InfoRb";
+            InfoRb.Size = new Size(50, 22);
+            InfoRb.TabIndex = 9;
+            InfoRb.TabStop = true;
+            InfoRb.Text = "Info";
+            InfoRb.UseVisualStyleBackColor = true;
+            InfoRb.CheckedChanged += InfoRb_CheckedChanged;
+            // 
+            // ErrorRb
+            // 
+            ErrorRb.AutoSize = true;
+            ErrorRb.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ErrorRb.ForeColor = SystemColors.ControlLightLight;
+            ErrorRb.Location = new Point(29, 59);
+            ErrorRb.Name = "ErrorRb";
+            ErrorRb.Size = new Size(61, 22);
+            ErrorRb.TabIndex = 8;
+            ErrorRb.TabStop = true;
+            ErrorRb.Text = "Error";
+            ErrorRb.UseVisualStyleBackColor = true;
+            ErrorRb.CheckedChanged += ErrorRb_CheckedChanged;
+            // 
+            // WarningRb
+            // 
+            WarningRb.AutoSize = true;
+            WarningRb.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            WarningRb.ForeColor = SystemColors.ButtonHighlight;
+            WarningRb.Location = new Point(29, 31);
+            WarningRb.Name = "WarningRb";
+            WarningRb.Size = new Size(83, 22);
+            WarningRb.TabIndex = 7;
+            WarningRb.TabStop = true;
+            WarningRb.Text = "Warning";
+            WarningRb.UseVisualStyleBackColor = true;
+            WarningRb.CheckedChanged += WarningRb_CheckedChanged;
+            // 
             // MainScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
+            Controls.Add(FilterPanel);
             Controls.Add(ProjectNameSelected);
             Controls.Add(OpenLogSelectedButton);
             Controls.Add(DataGridViewPanel);
@@ -245,6 +364,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)SoldierSelectedImage).EndInit();
             ((System.ComponentModel.ISupportInitialize)SoldierNameSelectedImage).EndInit();
+            FilterPanel.ResumeLayout(false);
+            FilterPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,5 +386,13 @@
         private Panel DataGridViewPanel;
         private Button OpenLogSelectedButton;
         private Label ProjectNameSelected;
+        private Panel FilterPanel;
+        private RadioButton SelectAllRb;
+        private RadioButton InfoRb;
+        private RadioButton ErrorRb;
+        private RadioButton WarningRb;
+        private Panel panel2;
+        private RadioButton OldDateRb;
+        private RadioButton LastDateRb;
     }
 }

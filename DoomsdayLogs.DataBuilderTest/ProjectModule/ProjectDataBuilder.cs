@@ -30,8 +30,8 @@ namespace DoomsdayLogs.DataBuilderTest.ProjectModule
 
         public Project GenerateCompleteProject()
         {
-            return this.WithProjectName("testProjectReleaser")
-                .WithProjectVersion("V10").Build();
+            return this.WithProjectName("testProjectDoomsday")
+                .WithProjectVersion("6.6.6").Build();
         }
     }
 }

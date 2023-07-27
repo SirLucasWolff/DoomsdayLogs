@@ -190,6 +190,21 @@
   <data name="New back bar 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\New back bar 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="New back bar edited 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New back bar edited 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="new frame to back on the image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new frame to back on the image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="new frame to back on the image 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new frame to back on the image 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="New white bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New white bar .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="New_back_bar_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New back bar 4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NotePad image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NotePad image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

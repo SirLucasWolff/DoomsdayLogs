@@ -303,6 +303,56 @@ namespace DoomsdayLogs.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap New_back_bar_4 {
+            get {
+                object obj = ResourceManager.GetObject("New_back_bar_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap New_back_bar_edited_2 {
+            get {
+                object obj = ResourceManager.GetObject("New back bar edited 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_frame_to_back_on_the_image {
+            get {
+                object obj = ResourceManager.GetObject("new frame to back on the image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_frame_to_back_on_the_image_2 {
+            get {
+                object obj = ResourceManager.GetObject("new frame to back on the image 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap New_white_bar {
+            get {
+                object obj = ResourceManager.GetObject("New white bar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NotePad_image {
             get {
                 object obj = ResourceManager.GetObject("NotePad image", resourceCulture);
