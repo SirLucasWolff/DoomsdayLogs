@@ -16,6 +16,20 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
             JsonViewer.Visible = false;
         }
 
+        public void ConfigChangeLogDescriptionButton(bool hasData)
+        {
+            if (hasData)
+            {
+                ChangeTextBoxButton.Visible = true;
+                TextPanel.Size = new Size(988, 215);
+            }
+            else
+            {
+                ChangeTextBoxButton.Visible = false;
+                TextPanel.Size = new Size(988, 259);
+            }
+        }
+
         private void SetLogInformations()
         {
             LogNameText.Text = LogSelected.LogName;

@@ -44,6 +44,8 @@
             label3 = new Label();
             label2 = new Label();
             tabControl1 = new TabControl();
+            label5 = new Label();
+            button1 = new Button();
             NotePadOptions.SuspendLayout();
             AboutTab.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -52,6 +54,8 @@
             // NotePadOptions
             // 
             NotePadOptions.BackgroundImage = Properties.Resources.Doomsday_background_image;
+            NotePadOptions.Controls.Add(button1);
+            NotePadOptions.Controls.Add(label5);
             NotePadOptions.Controls.Add(ProjectIdCB);
             NotePadOptions.Controls.Add(DataCB);
             NotePadOptions.Controls.Add(HelpCB);
@@ -256,6 +260,26 @@
             tabControl1.Size = new Size(494, 464);
             tabControl1.TabIndex = 3;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ControlLightLight;
+            label5.Location = new Point(76, 282);
+            label5.Name = "label5";
+            label5.Size = new Size(338, 24);
+            label5.TabIndex = 11;
+            label5.Text = "Select the file path to save the logs";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(189, 320);
+            button1.Name = "button1";
+            button1.Size = new Size(93, 41);
+            button1.TabIndex = 12;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // ConfigurationMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -290,5 +314,7 @@
         private Label label4;
         private Label label3;
         private Label label2;
+        private Label label5;
+        private Button button1;
     }
 }
