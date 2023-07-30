@@ -70,30 +70,35 @@ namespace DoomsdayLogs.WindowsForms
             {
                 this.SoldierSelectedImage.Image = Resources.Lucas_The_Shining;
                 SoldierSelectedName.Text = "Lucas The Shining";
+                SoldierSelectedName.Location = new Point(545, 135);
             }
 
             if (soldierName == "Daniel")
             {
                 this.SoldierSelectedImage.Image = Resources.Daniel_The_Metal_Soldier;
                 SoldierSelectedName.Text = "Daniel The Metal Soldier";
+                SoldierSelectedName.Location = new Point(528, 135);
             }
 
             if (soldierName == "Felipe")
             {
                 this.SoldierSelectedImage.Image = Resources.Felipe_The_Galaxies_eater;
                 SoldierSelectedName.Text = "Felipe The Galaxies Eater";
+                SoldierSelectedName.Location = new Point(523,135);
             }
 
             if (soldierName == "Bruno")
             {
                 this.SoldierSelectedImage.Image = Resources.Bruno_The_BadFather;
                 SoldierSelectedName.Text = "Bruno The BadFather";
+                SoldierSelectedName.Location = new Point(537, 135);
             }
 
             if (soldierName == "Samuel")
             {
                 this.SoldierSelectedImage.Image = Resources.Samuel_The_Pig_Killer;
                 SoldierSelectedName.Text = "Samuel The Pig Killer";
+                SoldierSelectedName.Location = new Point(535, 135);
             }
         }
 
@@ -125,11 +130,18 @@ namespace DoomsdayLogs.WindowsForms
         {
             Log logSelected = AutoFacBuilder.Register.GetLogSelected();
 
-            DetailsLogSelected? detailsLogSelected = null;
+            DetailsLogSelected detailsLogSelected;
 
             if (logSelected != null)
             {
                 detailsLogSelected = new DetailsLogSelected(logSelected);
+
+                bool verifyIfHasData = true;
+
+                if(logSelected.LogData == null)
+                    verifyIfHasData = false;
+
+                detailsLogSelected.ConfigChangeLogDescriptionButton(verifyIfHasData);
             }
             else return;
 

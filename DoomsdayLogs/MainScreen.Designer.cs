@@ -154,7 +154,7 @@
             SoldierSelectedName.AutoSize = true;
             SoldierSelectedName.BackColor = Color.FromArgb(134, 0, 27);
             SoldierSelectedName.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            SoldierSelectedName.Location = new Point(513, 135);
+            SoldierSelectedName.Location = new Point(520, 135);
             SoldierSelectedName.Name = "SoldierSelectedName";
             SoldierSelectedName.Size = new Size(41, 16);
             SoldierSelectedName.TabIndex = 9;

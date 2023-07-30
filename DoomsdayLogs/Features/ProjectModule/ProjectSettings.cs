@@ -52,7 +52,7 @@ namespace DoomsdayLogs.WindowsForms.Features.ProjectModule
 
             if (obj == null)
             {
-                MessageBox.Show("Select a project that exist", "Project selection",
+                MessageBox.Show("Select a project", "Project selection",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
