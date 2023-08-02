@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             NotePadOptions = new TabPage();
+            SelectLocalPathLog = new Button();
+            label5 = new Label();
             ProjectIdCB = new CheckBox();
             DataCB = new CheckBox();
             HelpCB = new CheckBox();
@@ -44,8 +46,6 @@
             label3 = new Label();
             label2 = new Label();
             tabControl1 = new TabControl();
-            label5 = new Label();
-            button1 = new Button();
             NotePadOptions.SuspendLayout();
             AboutTab.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -54,7 +54,7 @@
             // NotePadOptions
             // 
             NotePadOptions.BackgroundImage = Properties.Resources.Doomsday_background_image;
-            NotePadOptions.Controls.Add(button1);
+            NotePadOptions.Controls.Add(SelectLocalPathLog);
             NotePadOptions.Controls.Add(label5);
             NotePadOptions.Controls.Add(ProjectIdCB);
             NotePadOptions.Controls.Add(DataCB);
@@ -75,12 +75,35 @@
             NotePadOptions.UseVisualStyleBackColor = true;
             NotePadOptions.Click += NotePadOptions_Click;
             // 
+            // SelectLocalPathLog
+            // 
+            SelectLocalPathLog.BackColor = Color.FromArgb(134, 0, 27);
+            SelectLocalPathLog.FlatStyle = FlatStyle.Flat;
+            SelectLocalPathLog.Image = Properties.Resources.NotePad_image;
+            SelectLocalPathLog.Location = new Point(184, 97);
+            SelectLocalPathLog.Name = "SelectLocalPathLog";
+            SelectLocalPathLog.Size = new Size(93, 41);
+            SelectLocalPathLog.TabIndex = 12;
+            SelectLocalPathLog.UseVisualStyleBackColor = false;
+            SelectLocalPathLog.Click += SelectLocalPathLog_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ControlLightLight;
+            label5.Location = new Point(71, 52);
+            label5.Name = "label5";
+            label5.Size = new Size(338, 24);
+            label5.TabIndex = 11;
+            label5.Text = "Select the file path to save the logs";
+            // 
             // ProjectIdCB
             // 
             ProjectIdCB.AutoSize = true;
             ProjectIdCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ProjectIdCB.ForeColor = SystemColors.ControlLightLight;
-            ProjectIdCB.Location = new Point(362, 70);
+            ProjectIdCB.Location = new Point(359, 227);
             ProjectIdCB.Name = "ProjectIdCB";
             ProjectIdCB.Size = new Size(92, 22);
             ProjectIdCB.TabIndex = 10;
@@ -93,7 +116,7 @@
             DataCB.AutoSize = true;
             DataCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DataCB.ForeColor = SystemColors.ControlLightLight;
-            DataCB.Location = new Point(205, 172);
+            DataCB.Location = new Point(202, 329);
             DataCB.Name = "DataCB";
             DataCB.Size = new Size(61, 22);
             DataCB.TabIndex = 9;
@@ -106,7 +129,7 @@
             HelpCB.AutoSize = true;
             HelpCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             HelpCB.ForeColor = SystemColors.ControlLightLight;
-            HelpCB.Location = new Point(205, 138);
+            HelpCB.Location = new Point(202, 295);
             HelpCB.Name = "HelpCB";
             HelpCB.Size = new Size(59, 22);
             HelpCB.TabIndex = 8;
@@ -119,7 +142,7 @@
             ClassNameCB.AutoSize = true;
             ClassNameCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ClassNameCB.ForeColor = SystemColors.ControlLightLight;
-            ClassNameCB.Location = new Point(205, 104);
+            ClassNameCB.Location = new Point(202, 261);
             ClassNameCB.Name = "ClassNameCB";
             ClassNameCB.Size = new Size(110, 22);
             ClassNameCB.TabIndex = 6;
@@ -132,7 +155,7 @@
             LineCB.AutoSize = true;
             LineCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LineCB.ForeColor = SystemColors.ControlLightLight;
-            LineCB.Location = new Point(205, 70);
+            LineCB.Location = new Point(202, 227);
             LineCB.Name = "LineCB";
             LineCB.Size = new Size(57, 22);
             LineCB.TabIndex = 5;
@@ -145,7 +168,7 @@
             TypeCB.AutoSize = true;
             TypeCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TypeCB.ForeColor = SystemColors.ControlLight;
-            TypeCB.Location = new Point(28, 172);
+            TypeCB.Location = new Point(25, 329);
             TypeCB.Name = "TypeCB";
             TypeCB.Size = new Size(60, 22);
             TypeCB.TabIndex = 4;
@@ -158,7 +181,7 @@
             DateTimeCB.AutoSize = true;
             DateTimeCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DateTimeCB.ForeColor = SystemColors.ButtonHighlight;
-            DateTimeCB.Location = new Point(28, 138);
+            DateTimeCB.Location = new Point(25, 295);
             DateTimeCB.Name = "DateTimeCB";
             DateTimeCB.Size = new Size(95, 22);
             DateTimeCB.TabIndex = 3;
@@ -171,7 +194,7 @@
             DescriptionCB.AutoSize = true;
             DescriptionCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DescriptionCB.ForeColor = SystemColors.ButtonHighlight;
-            DescriptionCB.Location = new Point(28, 104);
+            DescriptionCB.Location = new Point(25, 261);
             DescriptionCB.Name = "DescriptionCB";
             DescriptionCB.Size = new Size(107, 22);
             DescriptionCB.TabIndex = 2;
@@ -184,7 +207,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(76, 17);
+            label1.Location = new Point(73, 174);
             label1.Name = "label1";
             label1.Size = new Size(336, 24);
             label1.TabIndex = 1;
@@ -195,7 +218,7 @@
             NameCB.AutoSize = true;
             NameCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             NameCB.ForeColor = SystemColors.ButtonHighlight;
-            NameCB.Location = new Point(28, 70);
+            NameCB.Location = new Point(25, 227);
             NameCB.Name = "NameCB";
             NameCB.Size = new Size(69, 22);
             NameCB.TabIndex = 0;
@@ -260,26 +283,6 @@
             tabControl1.Size = new Size(494, 464);
             tabControl1.TabIndex = 3;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.ControlLightLight;
-            label5.Location = new Point(76, 282);
-            label5.Name = "label5";
-            label5.Size = new Size(338, 24);
-            label5.TabIndex = 11;
-            label5.Text = "Select the file path to save the logs";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(189, 320);
-            button1.Name = "button1";
-            button1.Size = new Size(93, 41);
-            button1.TabIndex = 12;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // ConfigurationMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -315,6 +318,6 @@
         private Label label3;
         private Label label2;
         private Label label5;
-        private Button button1;
+        private Button SelectLocalPathLog;
     }
 }

@@ -363,6 +363,16 @@ namespace DoomsdayLogs.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Open_Log {
+            get {
+                object obj = ResourceManager.GetObject("Open Log", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Project_image {
             get {
                 object obj = ResourceManager.GetObject("Project image", resourceCulture);
@@ -416,6 +426,16 @@ namespace DoomsdayLogs.WindowsForms.Properties {
         internal static System.Drawing.Bitmap Samuel_The_Pig_Killer {
             get {
                 object obj = ResourceManager.GetObject("Samuel The Pig Killer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_log {
+            get {
+                object obj = ResourceManager.GetObject("Save log", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

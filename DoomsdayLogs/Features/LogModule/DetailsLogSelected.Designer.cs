@@ -45,7 +45,8 @@
             label1 = new Label();
             TextPanel = new FlowLayoutPanel();
             LogDescriptionText = new Label();
-            JsonViewer = new Panel();
+            treeViewJson = new TreeView();
+            OpenLogSavedButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -70,7 +71,7 @@
             CreateNotePadButton.BackColor = Color.FromArgb(134, 0, 27);
             CreateNotePadButton.FlatStyle = FlatStyle.Flat;
             CreateNotePadButton.ForeColor = Color.FromArgb(134, 0, 27);
-            CreateNotePadButton.Image = Properties.Resources.NotePad_image;
+            CreateNotePadButton.Image = Properties.Resources.Save_log;
             CreateNotePadButton.Location = new Point(1029, 15);
             CreateNotePadButton.Name = "CreateNotePadButton";
             CreateNotePadButton.Size = new Size(55, 37);
@@ -118,7 +119,7 @@
             // 
             pictureBox1.Location = new Point(17, 15);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1006, 37);
+            pictureBox1.Size = new Size(945, 37);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 18;
             pictureBox1.TabStop = false;
@@ -247,12 +248,29 @@
             LogDescriptionText.TabIndex = 0;
             LogDescriptionText.Text = "label2";
             // 
-            // JsonViewer
+            // treeViewJson
             // 
-            JsonViewer.Location = new Point(95, 150);
-            JsonViewer.Name = "JsonViewer";
-            JsonViewer.Size = new Size(989, 214);
-            JsonViewer.TabIndex = 1;
+            treeViewJson.BackColor = Color.Black;
+            treeViewJson.BorderStyle = BorderStyle.None;
+            treeViewJson.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            treeViewJson.ForeColor = Color.White;
+            treeViewJson.Location = new Point(27, 230);
+            treeViewJson.Name = "treeViewJson";
+            treeViewJson.Size = new Size(49, 97);
+            treeViewJson.TabIndex = 30;
+            // 
+            // OpenLogSavedButton
+            // 
+            OpenLogSavedButton.BackColor = Color.FromArgb(134, 0, 27);
+            OpenLogSavedButton.FlatStyle = FlatStyle.Flat;
+            OpenLogSavedButton.ForeColor = Color.FromArgb(134, 0, 27);
+            OpenLogSavedButton.Image = Properties.Resources.Open_Log;
+            OpenLogSavedButton.Location = new Point(968, 15);
+            OpenLogSavedButton.Name = "OpenLogSavedButton";
+            OpenLogSavedButton.Size = new Size(55, 37);
+            OpenLogSavedButton.TabIndex = 31;
+            OpenLogSavedButton.UseVisualStyleBackColor = false;
+            OpenLogSavedButton.Click += OpenLogSavedButton_Click;
             // 
             // DetailsLogSelected
             // 
@@ -261,7 +279,8 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Transparent;
             BackgroundImageLayout = ImageLayout.Stretch;
-            Controls.Add(JsonViewer);
+            Controls.Add(OpenLogSavedButton);
+            Controls.Add(treeViewJson);
             Controls.Add(TextPanel);
             Controls.Add(label1);
             Controls.Add(ChangeTextBoxButton);
@@ -282,6 +301,7 @@
             ForeColor = SystemColors.ControlDarkDark;
             Name = "DetailsLogSelected";
             Size = new Size(1141, 465);
+            Load += DetailsLogSelected_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -317,6 +337,7 @@
         private Label label1;
         private FlowLayoutPanel TextPanel;
         private Label LogDescriptionText;
-        private Panel JsonViewer;
+        private TreeView treeViewJson;
+        private Button OpenLogSavedButton;
     }
 }

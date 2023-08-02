@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using DoomsdayLogs.WindowsForms.Shared;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using Newtonsoft.Json;
 using System.Configuration;
 
 namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
@@ -136,6 +138,22 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
                 checkBoxToSave.Add("ProjectId");
             else
                 checkBoxToSave.Remove("ProjectId");
+        }
+
+        private void SelectLocalPathLog_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                config.AppSettings.Settings["LocalPathLog"].Value = dialog.FileName;
+
+                config.Save(ConfigurationSaveMode.Modified);
+
+                ConfigurationManager.RefreshSection("appSettings");
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
 using DoomsdayLogs.WindowsForms.Features.LogModule;
 using DoomsdayLogs.WindowsForms.Properties;
 using DoomsdayLogs.WindowsForms.Shared;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using System.Configuration;
 
@@ -84,7 +85,7 @@ namespace DoomsdayLogs.WindowsForms
             {
                 this.SoldierSelectedImage.Image = Resources.Felipe_The_Galaxies_eater;
                 SoldierSelectedName.Text = "Felipe The Galaxies Eater";
-                SoldierSelectedName.Location = new Point(523,135);
+                SoldierSelectedName.Location = new Point(523, 135);
             }
 
             if (soldierName == "Bruno")
@@ -138,7 +139,7 @@ namespace DoomsdayLogs.WindowsForms
 
                 bool verifyIfHasData = true;
 
-                if(logSelected.LogData == null)
+                if (logSelected.LogData == null)
                     verifyIfHasData = false;
 
                 detailsLogSelected.ConfigChangeLogDescriptionButton(verifyIfHasData);
