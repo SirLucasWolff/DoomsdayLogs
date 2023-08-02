@@ -1,6 +1,9 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using Newtonsoft.Json.Linq;
+using System.Configuration;
+using System.Diagnostics;
 
 namespace DoomsdayLogs.WindowsForms.Features.LogModule
 {
@@ -13,7 +16,18 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
             InitializeComponent();
             this.LogSelected = logSelected;
             SetLogInformations();
-            JsonViewer.Visible = false;
+            treeViewJson.Visible = false;
+            LogsButtonValidation();
+        }
+
+        private void LogsButtonValidation()
+        {
+            string logLocalPath = ConfigurationManager.AppSettings["LocalPathLog"] + "\\" + LogSelected.LogName + ".txt";
+
+            if (File.Exists(logLocalPath))
+                OpenLogSavedButton.Enabled = true;
+            else
+                OpenLogSavedButton.Enabled = false;
         }
 
         public void ConfigChangeLogDescriptionButton(bool hasData)
@@ -45,13 +59,37 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
 
         private void CreateNotePadButton_Click(object sender, EventArgs e)
         {
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.IsFolderPicker = true;
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["LocalPathLog"]))
             {
-                StreamWriter file = new StreamWriter(dialog.FileName + "\\" + LogSelected.LogName);
+                StreamWriter file = new StreamWriter(ConfigurationManager.AppSettings["LocalPathLog"] + "\\" + LogSelected.LogName + ".txt");
                 file.Write(new NotePadOptions().SetNotePadFields(LogSelected));
                 file.Close();
+                OpenLogSavedButton.Enabled = true;
+            }
+            else
+            {
+                CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+                dialog.IsFolderPicker = true;
+
+                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    StreamWriter file = new StreamWriter(dialog.FileName + "\\" + LogSelected.LogName + ".txt");
+                    file.Write(new NotePadOptions().SetNotePadFields(LogSelected));
+                    file.Close();
+                    OpenLogSavedButton.Enabled = true;
+
+                    if (MessageBox.Show("Do you want to save this local path?", "Log information",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                        config.AppSettings.Settings["LocalPathLog"].Value = dialog.FileName;
+
+                        config.Save(ConfigurationSaveMode.Modified);
+
+                        ConfigurationManager.RefreshSection("appSettings");
+                    }
+                }
             }
         }
 
@@ -59,16 +97,73 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
         {
             if (ChangeTextBoxButton.Text == "See log datas")
             {
-                JsonViewer.Visible = true;
+                treeViewJson.Visible = true;
+                TextPanel.Visible = false;
+                treeViewJson.Size = new Size(988, 215);
+                treeViewJson.Location = new Point(95, 149);
                 ChangeTextBoxButton.Text = "See log description";
                 LogDescriptionText.Text = LogSelected.LogData;
             }
             else
             {
                 ChangeTextBoxButton.Text = "See log datas";
-                JsonViewer.Visible = false;
+                treeViewJson.Visible = false;
+                TextPanel.Visible = true;
                 LogDescriptionText.Text = LogSelected.LogDescription;
             }
+        }
+
+        private void DetailsLogSelected_Load(object sender, EventArgs e)
+        {
+            if (LogSelected.LogData != null)
+            {
+                try
+                {
+                    JToken parsedJson = JToken.Parse(LogSelected.LogData);
+
+                    treeViewJson.Nodes.Clear();
+                    TreeNode rootNode = treeViewJson.Nodes.Add(LogSelected.LogClassName);
+                    AddJsonNodeToTreeView(parsedJson, rootNode);
+
+                    treeViewJson.Nodes[0].Expand();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading JSON: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void AddJsonNodeToTreeView(JToken token, TreeNode parentNode)
+        {
+            if (token.Type == JTokenType.Object)
+            {
+                foreach (var property in token.Children<JProperty>())
+                {
+                    TreeNode newNode = parentNode.Nodes.Add(property.Name);
+                    AddJsonNodeToTreeView(property.Value, newNode);
+                }
+            }
+            else if (token.Type == JTokenType.Array)
+            {
+                int index = 0;
+                foreach (var item in token)
+                {
+                    TreeNode newNode = parentNode.Nodes.Add($"[{index}]");
+                    AddJsonNodeToTreeView(item, newNode);
+                    index++;
+                }
+            }
+            else
+            {
+                parentNode.Nodes.Add(token.ToString());
+            }
+        }
+
+        private void OpenLogSavedButton_Click(object sender, EventArgs e)
+        {
+            string folderPath = ConfigurationManager.AppSettings["LocalPathLog"];
+            Process.Start("explorer.exe", folderPath);
         }
     }
 }

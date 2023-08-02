@@ -2,6 +2,7 @@
 using DoomsdayLogs.Domain.ProjectModule;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.Win32;
 
 namespace DoomsdayLogs.InfraORM
 {
@@ -20,7 +21,9 @@ namespace DoomsdayLogs.InfraORM
         {
             try
             {
-                optionsBuilder.UseLoggerFactory(ConsoleLoggerFactory).UseSqlServer("Data Source=LUCASWOLFF\\SQLEXPRESS;Initial Catalog=DoomsdayLogsDB;Integrated Security=true;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                string databaseFilePath = Registry.GetValue($"HKEY_LOCAL_MACHINE\\SOFTWARE\\Doomsday Logs", "DatabaseFilePath", null) + "\\DoomsdayLogsDB.mdf";
+
+                optionsBuilder.UseLoggerFactory(ConsoleLoggerFactory).UseSqlServer($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={databaseFilePath};Integrated Security=True");
             }
             catch (Exception ex)
             {
@@ -34,5 +37,7 @@ namespace DoomsdayLogs.InfraORM
 
         public DbSet<Log> LogDB { set; get; }
         public DbSet<Project> ProjectDB { set; get; }
+
+
     }
 }
