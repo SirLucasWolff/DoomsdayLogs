@@ -88,5 +88,26 @@ namespace DoomsdayLogs.WindowsForms.Shared
 
             return log;
         }
+
+        public void DeleteLog()
+        {
+            object logSelected = logTable.GetObjectSelected();
+
+            if(logSelected == null)
+            {
+                MessageBox.Show("Select a log to delete", "Log deleting",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            Log log = logAppService.SelectLogByName(logSelected.ToString());
+
+            logAppService.DeleteLog(log.Id);
+        }
+
+        public void DeleteProject()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -41,8 +41,6 @@
             ProjectNameLabel = new Label();
             ConfigurationButton = new Button();
             DataGridViewPanel = new Panel();
-            OpenLogSelectedButton = new Button();
-            ProjectNameSelected = new Label();
             FilterPanel = new Panel();
             panel2 = new Panel();
             OldDateRb = new RadioButton();
@@ -51,6 +49,9 @@
             InfoRb = new RadioButton();
             ErrorRb = new RadioButton();
             WarningRb = new RadioButton();
+            OpenLogSelectedButton = new Button();
+            ProjectNameSelected = new Label();
+            DeleteLogButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SoldierSelectedImage).BeginInit();
@@ -205,30 +206,6 @@
             DataGridViewPanel.Size = new Size(1103, 462);
             DataGridViewPanel.TabIndex = 13;
             // 
-            // OpenLogSelectedButton
-            // 
-            OpenLogSelectedButton.BackColor = Color.FromArgb(134, 0, 27);
-            OpenLogSelectedButton.FlatStyle = FlatStyle.Flat;
-            OpenLogSelectedButton.ForeColor = Color.FromArgb(134, 0, 27);
-            OpenLogSelectedButton.Image = Properties.Resources.Right;
-            OpenLogSelectedButton.Location = new Point(31, 228);
-            OpenLogSelectedButton.Name = "OpenLogSelectedButton";
-            OpenLogSelectedButton.Size = new Size(32, 462);
-            OpenLogSelectedButton.TabIndex = 14;
-            OpenLogSelectedButton.UseVisualStyleBackColor = false;
-            OpenLogSelectedButton.Click += OpenLogSelectedButton_Click;
-            // 
-            // ProjectNameSelected
-            // 
-            ProjectNameSelected.AutoSize = true;
-            ProjectNameSelected.BackColor = Color.FromArgb(134, 0, 27);
-            ProjectNameSelected.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ProjectNameSelected.Location = new Point(152, 75);
-            ProjectNameSelected.Name = "ProjectNameSelected";
-            ProjectNameSelected.Size = new Size(50, 18);
-            ProjectNameSelected.TabIndex = 15;
-            ProjectNameSelected.Text = "label1";
-            // 
             // FilterPanel
             // 
             FilterPanel.BackColor = Color.FromArgb(134, 0, 27);
@@ -240,7 +217,7 @@
             FilterPanel.Controls.Add(InfoRb);
             FilterPanel.Controls.Add(ErrorRb);
             FilterPanel.Controls.Add(WarningRb);
-            FilterPanel.Location = new Point(963, 179);
+            FilterPanel.Location = new Point(942, 179);
             FilterPanel.Name = "FilterPanel";
             FilterPanel.Size = new Size(149, 188);
             FilterPanel.TabIndex = 16;
@@ -337,12 +314,50 @@
             WarningRb.UseVisualStyleBackColor = true;
             WarningRb.CheckedChanged += WarningRb_CheckedChanged;
             // 
+            // OpenLogSelectedButton
+            // 
+            OpenLogSelectedButton.BackColor = Color.FromArgb(134, 0, 27);
+            OpenLogSelectedButton.FlatStyle = FlatStyle.Flat;
+            OpenLogSelectedButton.ForeColor = Color.FromArgb(134, 0, 27);
+            OpenLogSelectedButton.Image = Properties.Resources.Right;
+            OpenLogSelectedButton.Location = new Point(31, 228);
+            OpenLogSelectedButton.Name = "OpenLogSelectedButton";
+            OpenLogSelectedButton.Size = new Size(32, 462);
+            OpenLogSelectedButton.TabIndex = 14;
+            OpenLogSelectedButton.UseVisualStyleBackColor = false;
+            OpenLogSelectedButton.Click += OpenLogSelectedButton_Click;
+            // 
+            // ProjectNameSelected
+            // 
+            ProjectNameSelected.AutoSize = true;
+            ProjectNameSelected.BackColor = Color.FromArgb(134, 0, 27);
+            ProjectNameSelected.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ProjectNameSelected.Location = new Point(152, 75);
+            ProjectNameSelected.Name = "ProjectNameSelected";
+            ProjectNameSelected.Size = new Size(50, 18);
+            ProjectNameSelected.TabIndex = 15;
+            ProjectNameSelected.Text = "label1";
+            // 
+            // DeleteLogButton
+            // 
+            DeleteLogButton.BackColor = Color.FromArgb(134, 0, 27);
+            DeleteLogButton.FlatStyle = FlatStyle.Flat;
+            DeleteLogButton.ForeColor = Color.FromArgb(134, 0, 27);
+            DeleteLogButton.Image = Properties.Resources.Remove_button;
+            DeleteLogButton.Location = new Point(1002, 179);
+            DeleteLogButton.Name = "DeleteLogButton";
+            DeleteLogButton.Size = new Size(75, 38);
+            DeleteLogButton.TabIndex = 16;
+            DeleteLogButton.UseVisualStyleBackColor = false;
+            DeleteLogButton.Click += DeleteLogButton_Click;
+            // 
             // MainScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(FilterPanel);
+            Controls.Add(DeleteLogButton);
             Controls.Add(ProjectNameSelected);
             Controls.Add(OpenLogSelectedButton);
             Controls.Add(DataGridViewPanel);
@@ -394,5 +409,6 @@
         private Panel panel2;
         private RadioButton OldDateRb;
         private RadioButton LastDateRb;
+        private Button DeleteLogButton;
     }
 }
