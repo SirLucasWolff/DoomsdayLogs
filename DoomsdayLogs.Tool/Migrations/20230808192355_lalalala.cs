@@ -1,21 +1,17 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
-
-namespace DoomsdayLogs.InfraORM.Migrations
+namespace DoomsdayLogs.Tool.Migrations
 {
-    /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class lalalala : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
                 name: "ProjectDB",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProjectName = table.Column<string>(type: "NVARCHAR(150)", nullable: true),
                     ProjectVersion = table.Column<string>(type: "NVARCHAR(50)", nullable: true)
@@ -29,18 +25,17 @@ namespace DoomsdayLogs.InfraORM.Migrations
                 name: "LogDB",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LogName = table.Column<string>(type: "NVARCHAR(150)", nullable: true),
                     LogDescription = table.Column<string>(type: "NVARCHAR(350)", nullable: true),
                     LogDateTime = table.Column<DateTime>(type: "DATETIME", nullable: true),
-                    LogType = table.Column<string>(type: "NVARCHAR(50)", nullable: true),
-                    LogTypeImage = table.Column<byte[]>(type: "IMAGE", nullable: false),
-                    LogLine = table.Column<string>(type: "NVARCHAR(20)", nullable: true),
+                    LogType = table.Column<string>(type: "NVARCHAR(50)", nullable: false),
+                    LogTypeImage = table.Column<byte[]>(type: "IMAGE", nullable: true),
                     LogClassName = table.Column<string>(type: "NVARCHAR(200)", nullable: true),
-                    LogHelp = table.Column<string>(type: "NVARCHAR(350)", nullable: true),
+                    LogDataName = table.Column<string>(type: "NVARCHAR(100)", nullable: true),
                     LogData = table.Column<string>(type: "NTEXT", nullable: true),
-                    ProjectId = table.Column<int>(type: "INT", nullable: true)
+                    ProjectId = table.Column<int>(type: "INT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -49,7 +44,8 @@ namespace DoomsdayLogs.InfraORM.Migrations
                         name: "FK_LogDB_ProjectDB_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "ProjectDB",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -58,7 +54,6 @@ namespace DoomsdayLogs.InfraORM.Migrations
                 column: "ProjectId");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

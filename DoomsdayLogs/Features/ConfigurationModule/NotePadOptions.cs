@@ -24,20 +24,17 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
             if (notePadOptionsSelected.Contains("Type"))
                 finalResult += $"Type = {logSelected.LogType}\n";
 
-            if (notePadOptionsSelected.Contains("Line"))
-                finalResult += $"Line = {logSelected.LogLine}\n";
-
             if (notePadOptionsSelected.Contains("ClassName"))
                 finalResult += $"Class Name = {logSelected.LogClassName}\n";
-
-            if (notePadOptionsSelected.Contains("Help"))
-                finalResult += $"Help = {logSelected.LogHelp}\n";
 
             if (notePadOptionsSelected.Contains("Data"))
                 finalResult += $"Data = {logSelected.LogData}\n";
 
             if (notePadOptionsSelected.Contains("ProjectId"))
                 finalResult += $"Project Id = {logSelected.ProjectId}\n";
+
+            if (notePadOptionsSelected.Contains("DataName"))
+                finalResult += $"Data name = {logSelected.LogDataName}\n";
 
             return finalResult;
         }

@@ -1,7 +1,7 @@
 ﻿using DoomsdayLogs.WindowsForms.Shared;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using Newtonsoft.Json;
 using System.Configuration;
+using WindowsAPICodePack.Dialogs;
 
 namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
 {
@@ -25,10 +25,9 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
                 NameCB.Checked = true;
                 DescriptionCB.Checked = true;
                 DateTimeCB.Checked = true;
-                LineCB.Checked = true;
                 TypeCB.Checked = true;
                 ClassNameCB.Checked = true;
-                HelpCB.Checked = true;
+                DataNameCB.Checked = true;
                 DataCB.Checked = true;
                 ProjectIdCB.Checked = true;
             }
@@ -46,14 +45,11 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
                 if (notePadOptionsSelected.Contains("Type"))
                     TypeCB.Checked = true;
 
-                if (notePadOptionsSelected.Contains("Line"))
-                    LineCB.Checked = true;
-
                 if (notePadOptionsSelected.Contains("ClassName"))
                     ClassNameCB.Checked = true;
 
-                if (notePadOptionsSelected.Contains("Help"))
-                    HelpCB.Checked = true;
+                if (notePadOptionsSelected.Contains("DataName"))
+                    DataNameCB.Checked = true;
 
                 if (notePadOptionsSelected.Contains("Data"))
                     DataCB.Checked = true;
@@ -100,28 +96,12 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
                 checkBoxToSave.Remove("Type");
         }
 
-        private void LineCB_CheckedChanged(object sender, EventArgs e)
-        {
-            if (LineCB.Checked == true)
-                checkBoxToSave.Add("Line");
-            else
-                checkBoxToSave.Remove("Line");
-        }
-
         private void ClassNameCB_CheckedChanged(object sender, EventArgs e)
         {
             if (ClassNameCB.Checked == true)
                 checkBoxToSave.Add("ClassName");
             else
                 checkBoxToSave.Remove("ClassName");
-        }
-
-        private void HelpCB_CheckedChanged(object sender, EventArgs e)
-        {
-            if (HelpCB.Checked == true)
-                checkBoxToSave.Add("Help");
-            else
-                checkBoxToSave.Remove("Help");
         }
 
         private void DataCB_CheckedChanged(object sender, EventArgs e)
@@ -138,6 +118,14 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
                 checkBoxToSave.Add("ProjectId");
             else
                 checkBoxToSave.Remove("ProjectId");
+        }
+
+        private void DataNameCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DataNameCB.Checked == true)
+                checkBoxToSave.Add("DataName");
+            else
+                checkBoxToSave.Remove("DataName");
         }
 
         private void SelectLocalPathLog_Click(object sender, EventArgs e)

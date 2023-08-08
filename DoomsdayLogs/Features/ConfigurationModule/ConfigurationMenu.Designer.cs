@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             NotePadOptions = new TabPage();
+            DataNameCB = new CheckBox();
             SelectLocalPathLog = new Button();
             label5 = new Label();
             ProjectIdCB = new CheckBox();
             DataCB = new CheckBox();
-            HelpCB = new CheckBox();
             ClassNameCB = new CheckBox();
-            LineCB = new CheckBox();
             TypeCB = new CheckBox();
             DateTimeCB = new CheckBox();
             DescriptionCB = new CheckBox();
@@ -54,13 +53,12 @@
             // NotePadOptions
             // 
             NotePadOptions.BackgroundImage = Properties.Resources.Doomsday_background_image;
+            NotePadOptions.Controls.Add(DataNameCB);
             NotePadOptions.Controls.Add(SelectLocalPathLog);
             NotePadOptions.Controls.Add(label5);
             NotePadOptions.Controls.Add(ProjectIdCB);
             NotePadOptions.Controls.Add(DataCB);
-            NotePadOptions.Controls.Add(HelpCB);
             NotePadOptions.Controls.Add(ClassNameCB);
-            NotePadOptions.Controls.Add(LineCB);
             NotePadOptions.Controls.Add(TypeCB);
             NotePadOptions.Controls.Add(DateTimeCB);
             NotePadOptions.Controls.Add(DescriptionCB);
@@ -74,6 +72,19 @@
             NotePadOptions.Text = "NotePad Options";
             NotePadOptions.UseVisualStyleBackColor = true;
             NotePadOptions.Click += NotePadOptions_Click;
+            // 
+            // DataNameCB
+            // 
+            DataNameCB.AutoSize = true;
+            DataNameCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DataNameCB.ForeColor = SystemColors.ControlLightLight;
+            DataNameCB.Location = new Point(277, 337);
+            DataNameCB.Name = "DataNameCB";
+            DataNameCB.Size = new Size(103, 22);
+            DataNameCB.TabIndex = 13;
+            DataNameCB.Text = "DataName";
+            DataNameCB.UseVisualStyleBackColor = true;
+            DataNameCB.CheckedChanged += DataNameCB_CheckedChanged;
             // 
             // SelectLocalPathLog
             // 
@@ -103,7 +114,7 @@
             ProjectIdCB.AutoSize = true;
             ProjectIdCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ProjectIdCB.ForeColor = SystemColors.ControlLightLight;
-            ProjectIdCB.Location = new Point(359, 227);
+            ProjectIdCB.Location = new Point(277, 235);
             ProjectIdCB.Name = "ProjectIdCB";
             ProjectIdCB.Size = new Size(92, 22);
             ProjectIdCB.TabIndex = 10;
@@ -116,7 +127,7 @@
             DataCB.AutoSize = true;
             DataCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DataCB.ForeColor = SystemColors.ControlLightLight;
-            DataCB.Location = new Point(202, 329);
+            DataCB.Location = new Point(277, 303);
             DataCB.Name = "DataCB";
             DataCB.Size = new Size(61, 22);
             DataCB.TabIndex = 9;
@@ -124,25 +135,12 @@
             DataCB.UseVisualStyleBackColor = true;
             DataCB.CheckedChanged += DataCB_CheckedChanged;
             // 
-            // HelpCB
-            // 
-            HelpCB.AutoSize = true;
-            HelpCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            HelpCB.ForeColor = SystemColors.ControlLightLight;
-            HelpCB.Location = new Point(202, 295);
-            HelpCB.Name = "HelpCB";
-            HelpCB.Size = new Size(59, 22);
-            HelpCB.TabIndex = 8;
-            HelpCB.Text = "Help";
-            HelpCB.UseVisualStyleBackColor = true;
-            HelpCB.CheckedChanged += HelpCB_CheckedChanged;
-            // 
             // ClassNameCB
             // 
             ClassNameCB.AutoSize = true;
             ClassNameCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ClassNameCB.ForeColor = SystemColors.ControlLightLight;
-            ClassNameCB.Location = new Point(202, 261);
+            ClassNameCB.Location = new Point(277, 269);
             ClassNameCB.Name = "ClassNameCB";
             ClassNameCB.Size = new Size(110, 22);
             ClassNameCB.TabIndex = 6;
@@ -150,25 +148,12 @@
             ClassNameCB.UseVisualStyleBackColor = true;
             ClassNameCB.CheckedChanged += ClassNameCB_CheckedChanged;
             // 
-            // LineCB
-            // 
-            LineCB.AutoSize = true;
-            LineCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LineCB.ForeColor = SystemColors.ControlLightLight;
-            LineCB.Location = new Point(202, 227);
-            LineCB.Name = "LineCB";
-            LineCB.Size = new Size(57, 22);
-            LineCB.TabIndex = 5;
-            LineCB.Text = "Line";
-            LineCB.UseVisualStyleBackColor = true;
-            LineCB.CheckedChanged += LineCB_CheckedChanged;
-            // 
             // TypeCB
             // 
             TypeCB.AutoSize = true;
             TypeCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TypeCB.ForeColor = SystemColors.ControlLight;
-            TypeCB.Location = new Point(25, 329);
+            TypeCB.Location = new Point(100, 337);
             TypeCB.Name = "TypeCB";
             TypeCB.Size = new Size(60, 22);
             TypeCB.TabIndex = 4;
@@ -181,7 +166,7 @@
             DateTimeCB.AutoSize = true;
             DateTimeCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DateTimeCB.ForeColor = SystemColors.ButtonHighlight;
-            DateTimeCB.Location = new Point(25, 295);
+            DateTimeCB.Location = new Point(100, 303);
             DateTimeCB.Name = "DateTimeCB";
             DateTimeCB.Size = new Size(95, 22);
             DateTimeCB.TabIndex = 3;
@@ -194,7 +179,7 @@
             DescriptionCB.AutoSize = true;
             DescriptionCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DescriptionCB.ForeColor = SystemColors.ButtonHighlight;
-            DescriptionCB.Location = new Point(25, 261);
+            DescriptionCB.Location = new Point(100, 269);
             DescriptionCB.Name = "DescriptionCB";
             DescriptionCB.Size = new Size(107, 22);
             DescriptionCB.TabIndex = 2;
@@ -218,7 +203,7 @@
             NameCB.AutoSize = true;
             NameCB.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             NameCB.ForeColor = SystemColors.ButtonHighlight;
-            NameCB.Location = new Point(25, 227);
+            NameCB.Location = new Point(100, 235);
             NameCB.Name = "NameCB";
             NameCB.Size = new Size(69, 22);
             NameCB.TabIndex = 0;
@@ -304,9 +289,7 @@
         private TabPage NotePadOptions;
         private CheckBox ProjectIdCB;
         private CheckBox DataCB;
-        private CheckBox HelpCB;
         private CheckBox ClassNameCB;
-        private CheckBox LineCB;
         private CheckBox TypeCB;
         private CheckBox DateTimeCB;
         private CheckBox DescriptionCB;
@@ -319,5 +302,6 @@
         private Label label2;
         private Label label5;
         private Button SelectLocalPathLog;
+        private CheckBox DataNameCB;
     }
 }

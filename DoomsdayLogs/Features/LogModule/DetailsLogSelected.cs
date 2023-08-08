@@ -1,9 +1,10 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using Newtonsoft.Json.Linq;
 using System.Configuration;
 using System.Diagnostics;
+using WindowsAPICodePack.Dialogs;
+using static System.Net.WebRequestMethods;
 
 namespace DoomsdayLogs.WindowsForms.Features.LogModule
 {
@@ -24,7 +25,7 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
         {
             string logLocalPath = ConfigurationManager.AppSettings["LocalPathLog"] + "\\" + LogSelected.LogName + ".txt";
 
-            if (File.Exists(logLocalPath))
+            if (System.IO.File.Exists(logLocalPath))
                 OpenLogSavedButton.Enabled = true;
             else
                 OpenLogSavedButton.Enabled = false;
@@ -52,7 +53,7 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
 
             LogDateText.Text = LogSelected.LogDateTime.ToString();
 
-            LogHelpText.Text = LogSelected.LogHelp;
+            LogHelpText.Text = "https://www.notion.so/";
 
             LogDescriptionText.Text = LogSelected.LogDescription;
         }
@@ -122,7 +123,7 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
                     JToken parsedJson = JToken.Parse(LogSelected.LogData);
 
                     treeViewJson.Nodes.Clear();
-                    TreeNode rootNode = treeViewJson.Nodes.Add(LogSelected.LogClassName);
+                    TreeNode rootNode = treeViewJson.Nodes.Add(LogSelected.LogDataName);
                     AddJsonNodeToTreeView(parsedJson, rootNode);
 
                     treeViewJson.Nodes[0].Expand();

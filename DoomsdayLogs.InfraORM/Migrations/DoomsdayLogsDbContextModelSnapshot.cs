@@ -36,17 +36,14 @@ namespace DoomsdayLogs.InfraORM.Migrations
                     b.Property<string>("LogData")
                         .HasColumnType("NTEXT");
 
+                    b.Property<string>("LogDataName")
+                        .HasColumnType("NVARCHAR(100)");
+
                     b.Property<DateTime?>("LogDateTime")
                         .HasColumnType("DATETIME");
 
                     b.Property<string>("LogDescription")
                         .HasColumnType("NVARCHAR(350)");
-
-                    b.Property<string>("LogHelp")
-                        .HasColumnType("NVARCHAR(350)");
-
-                    b.Property<string>("LogLine")
-                        .HasColumnType("NVARCHAR(20)");
 
                     b.Property<string>("LogName")
                         .HasColumnType("NVARCHAR(150)");

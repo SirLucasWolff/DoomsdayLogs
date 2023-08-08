@@ -62,5 +62,23 @@ namespace DoomsdayLogs.Application.LogModule
                 return null;
             }
         }
+
+        public void InsertLog(Log log)
+        {
+            try
+            {
+                logRepository.Insert(log);
+            }
+            catch (Exception ex) { }
+        }
+
+        public void DeleteLog(int id)
+        {
+            try
+            {
+                logRepository.Delete(id);
+            }
+            catch (Exception ex) { }
+        }
     }
 }
