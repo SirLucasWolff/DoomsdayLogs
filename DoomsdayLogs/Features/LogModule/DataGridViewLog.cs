@@ -1,20 +1,16 @@
-﻿using DoomsdayLogs.Application.LogModule;
-using DoomsdayLogs.Domain.LogModule;
+﻿using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.WindowsForms.Shared;
 
 namespace DoomsdayLogs.WindowsForms.Features.LogModule
 {
     public partial class DataGridViewLog : UserControl
     {
-        private readonly LogAppService logAppService;
-
-        public DataGridViewLog(LogAppService logAppService)
+        public DataGridViewLog()
         {
             InitializeComponent();
             DataGridView.ConfigGridChekered();
             DataGridView.ConfigGridOnlyRead();
             DataGridView.Columns.AddRange(GetColumns());
-            this.logAppService = logAppService;
         }
 
         public DataGridViewColumn[] GetColumns()

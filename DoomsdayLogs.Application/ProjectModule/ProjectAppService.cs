@@ -47,5 +47,14 @@ namespace DoomsdayLogs.Application.ProjectModule
                 return null;
             }
         }
+
+        public void InsertProject(Project project)
+        {
+            try
+            {
+                projectRepository.Insert(project);
+            }
+            catch (Exception ex) { }
+        }
     }
 }

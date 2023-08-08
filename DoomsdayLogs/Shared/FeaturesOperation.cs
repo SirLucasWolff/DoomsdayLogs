@@ -21,7 +21,7 @@ namespace DoomsdayLogs.WindowsForms.Shared
         {
             this.logAppService = logAppService;
             this.projectAppService = projectAppService;
-            logTable = new DataGridViewLog(logAppService);
+            logTable = new DataGridViewLog();
             projectSettings = new ProjectSettings(projectAppService);
         }
 
@@ -36,7 +36,9 @@ namespace DoomsdayLogs.WindowsForms.Shared
             else
             {
                 project = projectAppService.SelectAllProjects().FirstOrDefault();
-                ProjectSelected.ProjectName = project.ProjectName;
+
+                if (project != null)
+                    ProjectSelected.ProjectName = project.ProjectName;
             }
 
             List<Log> logs = logAppService.SelectAllLogs().FindAll(x => x.ProjectId == project.Id);
@@ -45,7 +47,6 @@ namespace DoomsdayLogs.WindowsForms.Shared
             {
                 logs = logAppService.SelectAllLogs().FindAll(x => x.LogType == MainScreen.filterLogType).FindAll(x => x.ProjectId == project.Id);
             }
-               
 
             if (referenceName != "")
             {

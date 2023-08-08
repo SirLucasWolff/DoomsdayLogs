@@ -10,8 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="7.0.1" />
-    <PackageReference Include="Microsoft.WindowsAPICodePack.Shell" Version="1.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="WindowsAPICodePack.Shell.CommonFileDialogs" Version="1.1.5" />
   </ItemGroup>
 
   <ItemGroup>

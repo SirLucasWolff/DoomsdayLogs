@@ -3,7 +3,6 @@ using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
 using DoomsdayLogs.WindowsForms.Features.LogModule;
 using DoomsdayLogs.WindowsForms.Properties;
 using DoomsdayLogs.WindowsForms.Shared;
-using Microsoft.Win32;
 using Newtonsoft.Json;
 using System.Configuration;
 

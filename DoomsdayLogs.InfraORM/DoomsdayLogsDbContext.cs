@@ -23,7 +23,7 @@ namespace DoomsdayLogs.InfraORM
             {
                 string databaseFilePath = Registry.GetValue($"HKEY_LOCAL_MACHINE\\SOFTWARE\\Doomsday Logs", "DatabaseFilePath", null) + "\\DoomsdayLogsDB.mdf";
 
-                optionsBuilder.UseLoggerFactory(ConsoleLoggerFactory).UseSqlServer($"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={databaseFilePath};Integrated Security=True");
+                optionsBuilder.UseLoggerFactory(ConsoleLoggerFactory).UseSqlServer($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={databaseFilePath};Integrated Security=True");
             }
             catch (Exception ex)
             {

@@ -1,0 +1,86 @@
+﻿using DoomsdayLogs.Tool.Domain.LogModule;
+using System;
+using System.Collections.Generic;
+
+namespace DoomsdayLogs.Tool.Application
+{
+    public class LogAppService
+    {
+        LogRepositoryORM logRepository;
+
+        public LogAppService(LogRepositoryORM logRepository)
+        {
+            this.logRepository = logRepository;
+        }
+
+        public List<Log> SelectAllLogs()
+        {
+            try
+            {
+                List<Log> allLogsSelected = logRepository.SelectAll();
+                return allLogsSelected;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public Log SelectLogById(int id)
+        {
+            try
+            {
+                Log logSelected = logRepository.SelectById(id);
+                return logSelected;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public List<Log> SelectLogByReference(string logName)
+        {
+            try
+            {
+                List<Log> logSelected = logRepository.GetByReference(logName);
+                return logSelected;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public Log SelectLogByName(string logName)
+        {
+            try
+            {
+                Log log = logRepository.SelectByLogName(logName);
+                return log;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public void InsertLog(Log log)
+        {
+            try
+            {
+                logRepository.Insert(log);
+            }
+            catch (Exception ex) { }
+        }
+
+        public void DeleteLog(int id)
+        {
+            try
+            {
+                logRepository.Delete(id);
+            }
+            catch (Exception ex) { }
+        }
+    }
+}

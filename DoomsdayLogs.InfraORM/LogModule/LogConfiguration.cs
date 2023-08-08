@@ -15,9 +15,8 @@ namespace DoomsdayLogs.Infra.ORM.LogModule
             builder.Property(p => p.LogName).HasColumnType("NVARCHAR(150)");
             builder.Property(p => p.LogDescription).HasColumnType("NVARCHAR(350)");
             builder.Property(p => p.LogDateTime).HasColumnType("DATETIME");
-            builder.Property(p => p.LogLine).HasColumnType("NVARCHAR(20)");
             builder.Property(p => p.LogClassName).HasColumnType("NVARCHAR(200)");
-            builder.Property(p => p.LogHelp).HasColumnType("NVARCHAR(350)");
+            builder.Property(p => p.LogDataName).HasColumnType("NVARCHAR(100)");
             builder.Property(p => p.LogType).HasColumnType("NVARCHAR(50)");
             builder.Property(p => p.LogTypeImage).HasColumnType("IMAGE");
             builder.Property(p => p.LogData).HasColumnType("NTEXT");

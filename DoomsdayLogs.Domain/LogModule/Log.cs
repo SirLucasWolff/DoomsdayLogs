@@ -15,11 +15,9 @@ namespace DoomsdayLogs.Domain.LogModule
 
         public Byte[] LogTypeImage { get; set; }
 
-        public string? LogLine { get; set; }
-
         public string? LogClassName { get; set; }
 
-        public string? LogHelp { get; set; }
+        public string? LogDataName { get; set; }
 
         public string? LogData { get; set; }
 
@@ -27,65 +25,6 @@ namespace DoomsdayLogs.Domain.LogModule
 
         public Project Project { get; set; }
 
-        public Log(string logName, string logDescription, DateTime logDateTime, EnumLogType logType, string? logLine, string? logClassName, string? logHelp, Project project, byte[] logTypeImage)
-        {
-            LogName = logName;
-            LogDescription = logDescription;
-            LogDateTime = logDateTime;
-            LogType = logType;
-            LogLine = logLine;
-            LogClassName = logClassName;
-            LogHelp = logHelp;
-            Project = project;
-            if (Project != null)
-                ProjectId = project.Id;
-            LogTypeImage = logTypeImage;
-        }
-
-        public Log(string logName, string logDescription, DateTime logDateTime, EnumLogType logType, string logData, Project project, byte[] logTypeImage)
-        {
-            LogName = logName;
-            LogDescription = logDescription;
-            LogDateTime = logDateTime;
-            LogType = logType;
-            LogData = logData;
-            Project = project;
-            if (Project != null)
-                ProjectId = project.Id;
-            LogTypeImage = logTypeImage;
-        }
-
         public Log() { }
-
-        public string Validation()
-        {
-            string ValidationResult = "";
-
-            if (string.IsNullOrWhiteSpace(LogName))
-                ValidationResult = "The log name was null";
-
-            if (string.IsNullOrWhiteSpace(LogDescription))
-                ValidationResult = "The log description was null";
-
-            if (string.IsNullOrWhiteSpace(LogLine))
-                ValidationResult = "The log line was null";
-
-            if (string.IsNullOrWhiteSpace(LogClassName))
-                ValidationResult = "The log class name was null";
-
-            if (string.IsNullOrWhiteSpace(LogHelp))
-                ValidationResult = "The log help was null";
-
-            if (Project == null)
-                ValidationResult = "The project was null";
-
-            if (LogDateTime == null)
-                ValidationResult = "The log date time was null";
-
-            if (ValidationResult == "")
-                ValidationResult = "Is_Valid";
-
-            return ValidationResult;
-        }
     }
 }

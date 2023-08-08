@@ -49,21 +49,15 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
             return this;
         }
 
-        public LogDataBuilder WithLogLine(string logLine)
-        {
-            log.LogLine = logLine;
-            return this;
-        }
-
         public LogDataBuilder WithLogClassName(string logClassName)
         {
             log.LogClassName = logClassName;
             return this;
         }
 
-        public LogDataBuilder WithLogHelp(string logHelp)
+        public LogDataBuilder WithLogDataName(string dataName)
         {
-            log.LogHelp = logHelp;
+            log.LogDataName = dataName;
             return this;
         }
 
@@ -86,9 +80,8 @@ namespace DoomsdayLogs.DataBuilderTest.LogModule
                 .WithLogDateTime(DateTime.Now)
                 .WithLogType(EnumLogType.Info)
                 .WithLogTypeImage()
-                .WithLogLine("Line 25")
+                .WithLogDataName("LULULULU")
                 .WithLogClassName("testClassName")
-                .WithLogHelp("www.google.com.br")
                 .WithLogData()
                 .WithProjectId()
                 .Build();
