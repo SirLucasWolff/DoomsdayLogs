@@ -10,5 +10,9 @@ namespace DoomsdayLogs.WindowsForms.Shared
         UserControl GetLogTable(string logNamebyReference);
 
         Log GetLogSelected();
+
+        public void DeleteLog();
+
+        public void DeleteProject();
     }
 }

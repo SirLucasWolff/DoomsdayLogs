@@ -243,5 +243,10 @@ namespace DoomsdayLogs.WindowsForms
 
             ConfigPanelRegisters(false);
         }
+
+        private void DeleteLogButton_Click(object sender, EventArgs e)
+        {
+            AutoFacBuilder.Register.DeleteLog();
+        }
     }
 }
