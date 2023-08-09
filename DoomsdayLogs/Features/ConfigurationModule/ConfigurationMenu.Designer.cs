@@ -263,6 +263,8 @@
             tabControl1.Controls.Add(AboutTab);
             tabControl1.Controls.Add(NotePadOptions);
             tabControl1.Location = new Point(-5, 0);
+            tabControl1.MaximumSize = new Size(494, 464);
+            tabControl1.MinimumSize = new Size(494, 464);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(494, 464);

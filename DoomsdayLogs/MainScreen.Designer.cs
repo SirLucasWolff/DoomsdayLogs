@@ -388,6 +388,8 @@
             Controls.Add(SearchText);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
+            MaximumSize = new Size(1205, 762);
+            MinimumSize = new Size(1205, 762);
             Name = "MainScreen";
             Size = new Size(1205, 762);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

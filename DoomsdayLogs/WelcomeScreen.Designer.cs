@@ -126,12 +126,13 @@
             BrunoSelectedButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 0, 0);
             BrunoSelectedButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
             BrunoSelectedButton.FlatStyle = FlatStyle.Popup;
+            BrunoSelectedButton.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             BrunoSelectedButton.ForeColor = Color.Black;
             BrunoSelectedButton.Location = new Point(55, 437);
             BrunoSelectedButton.Name = "BrunoSelectedButton";
-            BrunoSelectedButton.Size = new Size(185, 23);
+            BrunoSelectedButton.Size = new Size(185, 35);
             BrunoSelectedButton.TabIndex = 7;
-            BrunoSelectedButton.Text = "Bruno the Madfather";
+            BrunoSelectedButton.Text = "Bruno The Madfather";
             BrunoSelectedButton.UseVisualStyleBackColor = false;
             BrunoSelectedButton.Click += BrunoSelectedButton_Click;
             // 
@@ -139,9 +140,10 @@
             // 
             DanielSelectedButton.BackColor = Color.Maroon;
             DanielSelectedButton.FlatStyle = FlatStyle.Popup;
+            DanielSelectedButton.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             DanielSelectedButton.Location = new Point(284, 437);
             DanielSelectedButton.Name = "DanielSelectedButton";
-            DanielSelectedButton.Size = new Size(185, 23);
+            DanielSelectedButton.Size = new Size(185, 35);
             DanielSelectedButton.TabIndex = 8;
             DanielSelectedButton.Text = "Daniel The Metal Soldier";
             DanielSelectedButton.UseVisualStyleBackColor = false;
@@ -151,9 +153,10 @@
             // 
             FelipeSelectedButton.BackColor = Color.Maroon;
             FelipeSelectedButton.FlatStyle = FlatStyle.Popup;
+            FelipeSelectedButton.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             FelipeSelectedButton.Location = new Point(513, 437);
             FelipeSelectedButton.Name = "FelipeSelectedButton";
-            FelipeSelectedButton.Size = new Size(185, 23);
+            FelipeSelectedButton.Size = new Size(185, 35);
             FelipeSelectedButton.TabIndex = 9;
             FelipeSelectedButton.Text = "Felipe The Galaxies eater";
             FelipeSelectedButton.UseVisualStyleBackColor = false;
@@ -163,9 +166,10 @@
             // 
             LucasSelectedButton.BackColor = Color.Maroon;
             LucasSelectedButton.FlatStyle = FlatStyle.Popup;
+            LucasSelectedButton.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             LucasSelectedButton.Location = new Point(742, 437);
             LucasSelectedButton.Name = "LucasSelectedButton";
-            LucasSelectedButton.Size = new Size(185, 23);
+            LucasSelectedButton.Size = new Size(185, 35);
             LucasSelectedButton.TabIndex = 10;
             LucasSelectedButton.Text = "Lucas The Shining";
             LucasSelectedButton.UseVisualStyleBackColor = false;
@@ -175,9 +179,10 @@
             // 
             SamuelSelectedButton.BackColor = Color.Maroon;
             SamuelSelectedButton.FlatStyle = FlatStyle.Popup;
+            SamuelSelectedButton.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             SamuelSelectedButton.Location = new Point(972, 437);
             SamuelSelectedButton.Name = "SamuelSelectedButton";
-            SamuelSelectedButton.Size = new Size(185, 23);
+            SamuelSelectedButton.Size = new Size(185, 35);
             SamuelSelectedButton.TabIndex = 11;
             SamuelSelectedButton.Text = "Samuel The Pig Killer";
             SamuelSelectedButton.UseVisualStyleBackColor = false;
@@ -200,6 +205,8 @@
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox6);
+            MaximumSize = new Size(1185, 762);
+            MinimumSize = new Size(1185, 762);
             Name = "WelcomeScreen";
             Size = new Size(1185, 762);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -47,6 +47,8 @@
             BackgroundImage = Properties.Resources.Doomsday_background_image;
             ClientSize = new Size(476, 425);
             Controls.Add(SettingsPanel);
+            MaximumSize = new Size(492, 464);
+            MinimumSize = new Size(492, 464);
             Name = "SettingsForm";
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
