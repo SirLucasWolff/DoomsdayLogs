@@ -61,7 +61,7 @@ namespace DoomsdayLogs.WindowsForms
 
         public void SetProjectName()
         {
-            ProjectNameSelected.Text = ProjectSelected.ProjectName;
+            ProjectNameSelected.Text = ProjectSelected.VerifyProjectName();
         }
 
         public void ChangeSoldierSelected(string soldierName)

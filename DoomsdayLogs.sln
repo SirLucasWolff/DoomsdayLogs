@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoomsdayLogs.PackagesManage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoomsdayLogs.Tool", "DoomsdayLogs.Tool\DoomsdayLogs.Tool.csproj", "{3E50E0C0-F768-499E-BFD9-88DC97CE37BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{4BE433EF-F540-4D2A-B1FC-A8CB59B67EBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

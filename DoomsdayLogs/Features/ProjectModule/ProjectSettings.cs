@@ -1,5 +1,4 @@
-﻿using DoomsdayLogs.Application.LogModule;
-using DoomsdayLogs.Application.ProjectModule;
+﻿using DoomsdayLogs.Application.ProjectModule;
 using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.Domain.ProjectModule;
 using DoomsdayLogs.WindowsForms.Shared;
@@ -111,22 +110,6 @@ namespace DoomsdayLogs.WindowsForms.Features.ProjectModule
             List<Project> projects = projectAppService.SelectAllProjects();
 
             UpdateRegisters(projects);
-
-            List<Project> projectList = AutoFacBuilder.Register.SelectAllProjects();
-
-            if (projectList.Count == 0)
-                ProjectSelected.ProjectName = "";
-
-            if (!projectList.Exists(x => x.ProjectName == ConfigurationManager.AppSettings["LastProjectSelected"]))
-            {
-                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-                config.AppSettings.Settings["LastProjectSelected"].Value = "";
-
-                config.Save(ConfigurationSaveMode.Modified);
-
-                ConfigurationManager.RefreshSection("appSettings");
-            }
 
             MainScreen.Instance.SetProjectName();
 
