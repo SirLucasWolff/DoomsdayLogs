@@ -41,14 +41,17 @@ namespace DoomsdayLogs.WindowsForms.Shared
                     ProjectSelected.ProjectName = project.ProjectName;
             }
 
-            List<Log> logs = logAppService.SelectAllLogs().FindAll(x => x.ProjectId == project.Id);
+            List<Log> logs = new List<Log>();
 
-            if (MainScreen.filterLogType != 0)
+            if(project != null)
+                logs = logAppService.SelectAllLogs().FindAll(x => x.ProjectId == project.Id);
+
+            if (MainScreen.filterLogType != 0 && project != null)
             {
                 logs = logAppService.SelectAllLogs().FindAll(x => x.LogType == MainScreen.filterLogType).FindAll(x => x.ProjectId == project.Id);
             }
 
-            if (referenceName != "")
+            if (referenceName != "" && project != null)
             {
                 logs = logAppService.SelectLogByReference($"%{referenceName}%").FindAll(x => x.ProjectId == project.Id);
             }
@@ -105,9 +108,19 @@ namespace DoomsdayLogs.WindowsForms.Shared
             logAppService.DeleteLog(log.Id);
         }
 
-        public void DeleteProject()
+        public List<Project> SelectAllProjects()
         {
-            throw new NotImplementedException();
+            return projectAppService.SelectAllProjects();
+        }
+
+        public List<Log> SelectAllLogs()
+        {
+            return logAppService.SelectAllLogs();
+        }
+
+        public void DeleteLogById(int id)
+        {
+            logAppService.DeleteLog(id);
         }
     }
 }

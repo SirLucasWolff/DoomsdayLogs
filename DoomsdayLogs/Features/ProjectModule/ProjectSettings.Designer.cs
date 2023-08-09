@@ -30,6 +30,8 @@
         {
             SelectProjectButton = new Button();
             ProjectsDataGrid = new DataGridView();
+            RemoveProjectButton = new Button();
+            RefreshProjectButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ProjectsDataGrid).BeginInit();
             SuspendLayout();
             // 
@@ -39,11 +41,11 @@
             SelectProjectButton.FlatStyle = FlatStyle.Popup;
             SelectProjectButton.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             SelectProjectButton.ForeColor = SystemColors.ActiveCaptionText;
-            SelectProjectButton.Location = new Point(0, 387);
+            SelectProjectButton.Image = Properties.Resources.Select_Button;
+            SelectProjectButton.Location = new Point(16, 377);
             SelectProjectButton.Name = "SelectProjectButton";
-            SelectProjectButton.Size = new Size(492, 35);
+            SelectProjectButton.Size = new Size(142, 45);
             SelectProjectButton.TabIndex = 4;
-            SelectProjectButton.Text = "SELECT PROJECT";
             SelectProjectButton.UseVisualStyleBackColor = false;
             SelectProjectButton.Click += SelectProjectButton_Click;
             // 
@@ -54,14 +56,44 @@
             ProjectsDataGrid.Location = new Point(0, 0);
             ProjectsDataGrid.Name = "ProjectsDataGrid";
             ProjectsDataGrid.RowTemplate.Height = 25;
-            ProjectsDataGrid.Size = new Size(492, 381);
+            ProjectsDataGrid.Size = new Size(492, 371);
             ProjectsDataGrid.TabIndex = 5;
+            // 
+            // RemoveProjectButton
+            // 
+            RemoveProjectButton.BackColor = Color.FromArgb(134, 0, 27);
+            RemoveProjectButton.FlatStyle = FlatStyle.Popup;
+            RemoveProjectButton.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            RemoveProjectButton.ForeColor = SystemColors.ActiveCaptionText;
+            RemoveProjectButton.Image = Properties.Resources.Remove_button;
+            RemoveProjectButton.Location = new Point(164, 377);
+            RemoveProjectButton.Name = "RemoveProjectButton";
+            RemoveProjectButton.Size = new Size(142, 45);
+            RemoveProjectButton.TabIndex = 6;
+            RemoveProjectButton.UseVisualStyleBackColor = false;
+            RemoveProjectButton.Click += RemoveProjectButton_Click;
+            // 
+            // RefreshProjectButton
+            // 
+            RefreshProjectButton.BackColor = Color.FromArgb(134, 0, 27);
+            RefreshProjectButton.FlatStyle = FlatStyle.Popup;
+            RefreshProjectButton.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            RefreshProjectButton.ForeColor = SystemColors.ActiveCaptionText;
+            RefreshProjectButton.Image = Properties.Resources.Refresh_button;
+            RefreshProjectButton.Location = new Point(312, 377);
+            RefreshProjectButton.Name = "RefreshProjectButton";
+            RefreshProjectButton.Size = new Size(142, 45);
+            RefreshProjectButton.TabIndex = 7;
+            RefreshProjectButton.UseVisualStyleBackColor = false;
+            RefreshProjectButton.Click += RefreshProjectButton_Click;
             // 
             // ProjectSettings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
+            Controls.Add(RefreshProjectButton);
+            Controls.Add(RemoveProjectButton);
             Controls.Add(ProjectsDataGrid);
             Controls.Add(SelectProjectButton);
             Name = "ProjectSettings";
@@ -74,5 +106,7 @@
         #endregion
         private Button SelectProjectButton;
         private DataGridView ProjectsDataGrid;
+        private Button RemoveProjectButton;
+        private Button RefreshProjectButton;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
+using DoomsdayLogs.Domain.ProjectModule;
 using DoomsdayLogs.WindowsForms.Features.ProjectModule;
 
 namespace DoomsdayLogs.WindowsForms.Shared
@@ -13,6 +14,10 @@ namespace DoomsdayLogs.WindowsForms.Shared
 
         public void DeleteLog();
 
-        public void DeleteProject();
+        public List<Project> SelectAllProjects();
+
+        public List<Log> SelectAllLogs();
+
+        public void DeleteLogById(int id);
     }
 }
