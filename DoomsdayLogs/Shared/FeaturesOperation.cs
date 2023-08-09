@@ -27,7 +27,7 @@ namespace DoomsdayLogs.WindowsForms.Shared
 
         public UserControl GetLogTable(string referenceName)
         {
-            Project project;
+            Project project = null;
 
             if (ProjectSelected.ProjectName != "")
             {
@@ -35,10 +35,12 @@ namespace DoomsdayLogs.WindowsForms.Shared
             }
             else
             {
-                project = projectAppService.SelectAllProjects().FirstOrDefault();
-
                 if (project != null)
+                {
+                    project = projectAppService.SelectAllProjects().FirstOrDefault();
+
                     ProjectSelected.ProjectName = project.ProjectName;
+                }
             }
 
             List<Log> logs = new List<Log>();
