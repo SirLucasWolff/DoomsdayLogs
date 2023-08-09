@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoomsdayLogsForm));
             MainPanel = new Panel();
             SuspendLayout();
             // 
@@ -49,10 +50,12 @@
             ClientSize = new Size(1207, 723);
             Controls.Add(MainPanel);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
+            MaximumSize = new Size(1223, 762);
             MinimizeBox = false;
+            MinimumSize = new Size(1223, 762);
             Name = "DoomsdayLogsForm";
-            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Doomsday Logs";
             ResumeLayout(false);
