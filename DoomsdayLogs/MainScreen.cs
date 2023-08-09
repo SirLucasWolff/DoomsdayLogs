@@ -162,6 +162,10 @@ namespace DoomsdayLogs.WindowsForms
                 FilterButton.Enabled = false;
 
                 ProjectButton.Enabled = false;
+
+                DeleteLogButton.Enabled = false;
+
+                RefreshLogButton.Enabled = false;
             }
             else
             {
@@ -176,6 +180,10 @@ namespace DoomsdayLogs.WindowsForms
                 FilterButton.Enabled = true;
 
                 ProjectButton.Enabled = true;
+
+                DeleteLogButton.Enabled = true;
+
+                RefreshLogButton.Enabled = true;
 
                 ConfigPanelRegisters(false);
             }
@@ -247,6 +255,13 @@ namespace DoomsdayLogs.WindowsForms
         private void DeleteLogButton_Click(object sender, EventArgs e)
         {
             AutoFacBuilder.Register.DeleteLog();
+
+            ConfigPanelRegisters(false);
+        }
+
+        private void RefreshLogButton_Click(object sender, EventArgs e)
+        {
+            ConfigPanelRegisters(false);
         }
     }
 }

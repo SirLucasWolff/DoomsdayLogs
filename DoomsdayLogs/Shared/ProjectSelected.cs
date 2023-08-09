@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using DoomsdayLogs.Domain.ProjectModule;
+using System.Configuration;
 
 namespace DoomsdayLogs.WindowsForms.Shared
 {

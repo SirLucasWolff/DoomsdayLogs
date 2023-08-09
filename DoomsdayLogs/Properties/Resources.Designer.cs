@@ -413,6 +413,16 @@ namespace DoomsdayLogs.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Refresh_button {
+            get {
+                object obj = ResourceManager.GetObject("Refresh button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Remove_button {
             get {
                 object obj = ResourceManager.GetObject("Remove button", resourceCulture);
@@ -466,6 +476,16 @@ namespace DoomsdayLogs.WindowsForms.Properties {
         internal static System.Drawing.Bitmap Select_a_soldier_text {
             get {
                 object obj = ResourceManager.GetObject("Select a soldier text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Select_Button {
+            get {
+                object obj = ResourceManager.GetObject("Select Button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

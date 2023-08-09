@@ -56,5 +56,14 @@ namespace DoomsdayLogs.Application.ProjectModule
             }
             catch (Exception ex) { }
         }
+
+        public void DeleteProject(int id)
+        {
+            try
+            {
+                projectRepository.Delete(id);
+            }
+            catch (Exception ex) { }
+        }
     }
 }

@@ -73,8 +73,14 @@ namespace DoomsdayLogs.Tool
 
                 List<Log> AllLogsOnDatabase = AutoFacBuilder.Register.SelectAllLogs();
 
-                if (projectOnDatabase != null && AllLogsOnDatabase.Exists(x => x.LogName == logName) == false)
+                if (projectOnDatabase != null)
                 {
+                    if (AllLogsOnDatabase != null)
+                    {
+                        if (AllLogsOnDatabase.Exists(x => x.LogName == logName) == true)
+                            return;
+                    }
+
                     StackTrace stackTrace = new StackTrace();
 
                     var getLine = stackTrace.GetFrame(1);
@@ -106,17 +112,17 @@ namespace DoomsdayLogs.Tool
                     }
 
                     log.LogTypeImage = logTyppeImage;
-                   
+
                     log.LogClassName = GetCallingClassInfo().CallerClassName;
 
-                    if(logData != null)
+                    if (logData != null)
                     {
                         string result = "DataNameNotFound";
 
-                        if(GetClassNameFromList(logData) != "Unknown" && result == "DataName")
+                        if (GetClassNameFromList(logData) != "Unknown" && result == "DataNameNotFound")
                             result = GetClassNameFromList(logData);
 
-                        if(GetClassName(logData) != "Unknown" && result == "DataName")
+                        if (GetClassName(logData) != "Unknown" && result == "DataNameNotFound")
                             result = GetClassName(logData);
 
                         string logDataJson = JsonSerializer.Serialize(logData);

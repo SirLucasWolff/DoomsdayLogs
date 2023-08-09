@@ -52,6 +52,7 @@
             OpenLogSelectedButton = new Button();
             ProjectNameSelected = new Label();
             DeleteLogButton = new Button();
+            RefreshLogButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SoldierSelectedImage).BeginInit();
@@ -351,11 +352,25 @@
             DeleteLogButton.UseVisualStyleBackColor = false;
             DeleteLogButton.Click += DeleteLogButton_Click;
             // 
+            // RefreshLogButton
+            // 
+            RefreshLogButton.BackColor = Color.FromArgb(134, 0, 27);
+            RefreshLogButton.FlatStyle = FlatStyle.Flat;
+            RefreshLogButton.ForeColor = Color.FromArgb(134, 0, 27);
+            RefreshLogButton.Image = Properties.Resources.Refresh_button;
+            RefreshLogButton.Location = new Point(69, 179);
+            RefreshLogButton.Name = "RefreshLogButton";
+            RefreshLogButton.Size = new Size(75, 38);
+            RefreshLogButton.TabIndex = 17;
+            RefreshLogButton.UseVisualStyleBackColor = false;
+            RefreshLogButton.Click += RefreshLogButton_Click;
+            // 
             // MainScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
+            Controls.Add(RefreshLogButton);
             Controls.Add(FilterPanel);
             Controls.Add(DeleteLogButton);
             Controls.Add(ProjectNameSelected);
@@ -410,5 +425,6 @@
         private RadioButton OldDateRb;
         private RadioButton LastDateRb;
         private Button DeleteLogButton;
+        private Button RefreshLogButton;
     }
 }
