@@ -5,6 +5,7 @@ using DoomsdayLogs.WindowsForms.Properties;
 using DoomsdayLogs.WindowsForms.Shared;
 using Newtonsoft.Json;
 using System.Configuration;
+using WindowsAPICodePack.Dialogs;
 
 namespace DoomsdayLogs.WindowsForms
 {
@@ -43,7 +44,7 @@ namespace DoomsdayLogs.WindowsForms
 
         public void ConfigPanelRegisters(bool isSearchByReference)
         {
-            UserControl table = null;
+            UserControl? table = null;
 
             if (isSearchByReference)
             {
@@ -262,6 +263,58 @@ namespace DoomsdayLogs.WindowsForms
         private void RefreshLogButton_Click(object sender, EventArgs e)
         {
             ConfigPanelRegisters(false);
+        }
+
+        private void SaveAllLogsButton_Click(object sender, EventArgs e)
+        {
+            List<Log> logs = new List<Log>();
+
+            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["LocalPathLog"]))
+            {
+                logs = AutoFacBuilder.Register.GetLogData();
+
+                foreach (Log log in logs)
+                {
+                    StreamWriter file = new StreamWriter(ConfigurationManager.AppSettings["LocalPathLog"] + "\\" + log.LogName + ".txt");
+                    file.Write(new NotePadOptions().SetNotePadFields(log));
+                    file.Close();
+                }
+            }
+            else
+            {
+                CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+                dialog.IsFolderPicker = true;
+
+                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+
+                    logs = AutoFacBuilder.Register.GetLogData();
+
+                    foreach (Log log in logs)
+                    {
+                        StreamWriter file = new StreamWriter(ConfigurationManager.AppSettings["LocalPathLog"] + "\\" + log.LogName + ".txt");
+                        file.Write(new NotePadOptions().SetNotePadFields(log));
+                        file.Close();
+                    }
+
+                    if (MessageBox.Show("Do you want to save this local path?", "Log information",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                        config.AppSettings.Settings["LocalPathLog"].Value = dialog.FileName;
+
+                        config.Save(ConfigurationSaveMode.Modified);
+
+                        ConfigurationManager.RefreshSection("appSettings");
+                    }
+                }
+            }
+
+            if (logs == null || logs.Count == 0)
+                MessageBox.Show("There were no logs to save");
+            else
+                MessageBox.Show("All logs saved");
         }
     }
 }

@@ -53,6 +53,19 @@ namespace DoomsdayLogs.WindowsForms.Shared
                 logs = logAppService.SelectAllLogs().FindAll(x => x.LogType == MainScreen.filterLogType).FindAll(x => x.ProjectId == project.Id);
             }
 
+            try
+            {
+                if (DateTime.TryParse(referenceName, out DateTime parsedDateTime))
+                {
+                    Console.WriteLine("The input date and time is valid: " + parsedDateTime.ToString("yyyy-MM-dd"));
+                }
+                else
+                {
+                    Console.WriteLine("The input date and time is invalid.");
+                }
+            }
+            catch (Exception ex) { }
+
             if (referenceName != "" && project != null)
             {
                 logs = logAppService.SelectLogByReference($"%{referenceName}%").FindAll(x => x.ProjectId == project.Id);
@@ -123,6 +136,20 @@ namespace DoomsdayLogs.WindowsForms.Shared
         public void DeleteLogById(int id)
         {
             logAppService.DeleteLog(id);
+        }
+
+        public List<Log> GetLogData()
+        {
+            List<string> logNames = logTable.GetLogData();
+
+            List<Log> logs = new List<Log>();
+
+            foreach(string logName in logNames)
+            {
+                logs.Add(logAppService.SelectLogByName(logName));
+            }
+
+            return logs;
         }
     }
 }

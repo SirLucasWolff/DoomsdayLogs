@@ -73,7 +73,7 @@ namespace DoomsdayLogs.Tool
 
                 List<Log> AllLogsOnDatabase = AutoFacBuilder.Register.SelectAllLogs();
 
-                if (projectOnDatabase != null)
+                if (projectOnDatabase != null && logName != "")
                 {
                     if (AllLogsOnDatabase != null)
                     {

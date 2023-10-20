@@ -53,6 +53,7 @@
             ProjectNameSelected = new Label();
             DeleteLogButton = new Button();
             RefreshLogButton = new Button();
+            SaveAllLogsButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SoldierSelectedImage).BeginInit();
@@ -358,18 +359,32 @@
             RefreshLogButton.FlatStyle = FlatStyle.Flat;
             RefreshLogButton.ForeColor = Color.FromArgb(134, 0, 27);
             RefreshLogButton.Image = Properties.Resources.Refresh_button;
-            RefreshLogButton.Location = new Point(69, 179);
+            RefreshLogButton.Location = new Point(31, 179);
             RefreshLogButton.Name = "RefreshLogButton";
             RefreshLogButton.Size = new Size(75, 38);
             RefreshLogButton.TabIndex = 17;
             RefreshLogButton.UseVisualStyleBackColor = false;
             RefreshLogButton.Click += RefreshLogButton_Click;
             // 
+            // SaveAllLogsButton
+            // 
+            SaveAllLogsButton.BackColor = Color.FromArgb(134, 0, 27);
+            SaveAllLogsButton.FlatStyle = FlatStyle.Flat;
+            SaveAllLogsButton.ForeColor = Color.FromArgb(134, 0, 27);
+            SaveAllLogsButton.Image = Properties.Resources.SaveAll;
+            SaveAllLogsButton.Location = new Point(127, 182);
+            SaveAllLogsButton.Name = "SaveAllLogsButton";
+            SaveAllLogsButton.Size = new Size(75, 38);
+            SaveAllLogsButton.TabIndex = 18;
+            SaveAllLogsButton.UseVisualStyleBackColor = false;
+            SaveAllLogsButton.Click += SaveAllLogsButton_Click;
+            // 
             // MainScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
+            Controls.Add(SaveAllLogsButton);
             Controls.Add(RefreshLogButton);
             Controls.Add(FilterPanel);
             Controls.Add(DeleteLogButton);
@@ -428,5 +443,6 @@
         private RadioButton LastDateRb;
         private Button DeleteLogButton;
         private Button RefreshLogButton;
+        private Button SaveAllLogsButton;
     }
 }
