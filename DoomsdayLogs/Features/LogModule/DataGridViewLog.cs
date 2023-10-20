@@ -1,5 +1,6 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.WindowsForms.Shared;
+using System.Windows.Forms;
 
 namespace DoomsdayLogs.WindowsForms.Features.LogModule
 {
@@ -35,6 +36,23 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
         public void UpdateRegisters(List<Log> logs)
         {
             LoadTable(logs);
+        }
+
+        public List<string> GetLogData()
+        {
+            List<string> rowList = new List<string>();
+
+            foreach (DataGridViewRow row in DataGridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    string logName = (string)row.Cells[0].Value;
+
+                    rowList.Add(logName);
+                }
+            }
+
+            return rowList;
         }
 
         private void LoadTable(List<Log> logs)

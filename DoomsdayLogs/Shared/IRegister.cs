@@ -19,5 +19,7 @@ namespace DoomsdayLogs.WindowsForms.Shared
         public List<Log> SelectAllLogs();
 
         public void DeleteLogById(int id);
+
+        public List<Log> GetLogData();
     }
 }
