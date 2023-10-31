@@ -57,16 +57,14 @@ namespace DoomsdayLogs.WindowsForms.Shared
             {
                 if (DateTime.TryParse(referenceName, out DateTime parsedDateTime))
                 {
-                    Console.WriteLine("The input date and time is valid: " + parsedDateTime.ToString("yyyy-MM-dd"));
-                }
-                else
-                {
-                    Console.WriteLine("The input date and time is invalid.");
+                    List<Log> logsById = logAppService.SelectAllLogs().FindAll(x => x.ProjectId == project.Id);
+
+                    logs = logsById.FindAll(x => x.LogDateTime.Value.Date == parsedDateTime.Date);
                 }
             }
             catch (Exception ex) { }
 
-            if (referenceName != "" && project != null)
+            if (referenceName != "" && !DateTime.TryParse(referenceName, out DateTime parsed) && project != null)
             {
                 logs = logAppService.SelectLogByReference($"%{referenceName}%").FindAll(x => x.ProjectId == project.Id);
             }
