@@ -37,10 +37,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoomsdayLogs.PackagesManage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoomsdayLogs.Tool", "DoomsdayLogs.Tool\DoomsdayLogs.Tool.csproj", "{3E50E0C0-F768-499E-BFD9-88DC97CE37BF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{E8C064AB-2698-437C-B15B-F37E9DAEBBDB}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DoomsdayLogs.Setup", "Installer\DoomsdayLogs.Setup\DoomsdayLogs.Setup.vdproj", "{4F5C61C3-66CB-4ED7-AFC5-B7A1DD380A31}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,8 +79,6 @@ Global
 		{3E50E0C0-F768-499E-BFD9-88DC97CE37BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E50E0C0-F768-499E-BFD9-88DC97CE37BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E50E0C0-F768-499E-BFD9-88DC97CE37BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F5C61C3-66CB-4ED7-AFC5-B7A1DD380A31}.Debug|Any CPU.ActiveCfg = Debug
-		{4F5C61C3-66CB-4ED7-AFC5-B7A1DD380A31}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,7 +94,6 @@ Global
 		{AACA75BA-20DB-46F6-AD71-B0F054FB237E} = {69D45538-4B60-45BB-B18F-8DB74AFD443E}
 		{238EA62E-AF72-4228-A5E3-56533BF643A8} = {B9673572-3037-405D-AF68-54FA9506BFD1}
 		{3E50E0C0-F768-499E-BFD9-88DC97CE37BF} = {B9673572-3037-405D-AF68-54FA9506BFD1}
-		{4F5C61C3-66CB-4ED7-AFC5-B7A1DD380A31} = {E8C064AB-2698-437C-B15B-F37E9DAEBBDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1EA5E58-8C41-4AE9-A9E4-82A82B49F1E5}

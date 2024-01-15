@@ -273,6 +273,16 @@ namespace DoomsdayLogs.WindowsForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Marcelo_face {
+            get {
+                object obj = ResourceManager.GetObject("Marcelo face", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap New_back_bar {
             get {
                 object obj = ResourceManager.GetObject("New back bar", resourceCulture);
