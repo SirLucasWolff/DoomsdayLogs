@@ -40,6 +40,7 @@
             FelipeSelectedButton = new Button();
             LucasSelectedButton = new Button();
             SamuelSelectedButton = new Button();
+            NextSoldierScreen = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -188,11 +189,25 @@
             SamuelSelectedButton.UseVisualStyleBackColor = false;
             SamuelSelectedButton.Click += SamuelSelectedButton_Click;
             // 
+            // NextSoldierScreen
+            // 
+            NextSoldierScreen.BackColor = Color.Maroon;
+            NextSoldierScreen.FlatStyle = FlatStyle.Popup;
+            NextSoldierScreen.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            NextSoldierScreen.Image = Properties.Resources.Right;
+            NextSoldierScreen.Location = new Point(1109, 663);
+            NextSoldierScreen.Name = "NextSoldierScreen";
+            NextSoldierScreen.Size = new Size(73, 35);
+            NextSoldierScreen.TabIndex = 23;
+            NextSoldierScreen.UseVisualStyleBackColor = false;
+            NextSoldierScreen.Click += NextSoldierScreen_Click;
+            // 
             // WelcomeScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
+            Controls.Add(NextSoldierScreen);
             Controls.Add(SamuelSelectedButton);
             Controls.Add(LucasSelectedButton);
             Controls.Add(FelipeSelectedButton);
@@ -233,5 +248,6 @@
         private Button FelipeSelectedButton;
         private Button LucasSelectedButton;
         private Button SamuelSelectedButton;
+        private Button NextSoldierScreen;
     }
 }

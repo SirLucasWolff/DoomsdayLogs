@@ -39,6 +39,15 @@ namespace DoomsdayLogs
             MainPanel.Controls.Add(welcomeScreen);
         }
 
+        public void SetTheWelcomeScreen2()
+        {
+            MainPanel.Controls.Clear();
+
+            WelcomeScreen2 welcomeScreen = new WelcomeScreen2();
+
+            MainPanel.Controls.Add(welcomeScreen);
+        }
+
         #endregion
     }
 }

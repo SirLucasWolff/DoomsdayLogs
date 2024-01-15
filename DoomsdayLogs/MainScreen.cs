@@ -101,6 +101,13 @@ namespace DoomsdayLogs.WindowsForms
                 SoldierSelectedName.Text = "Samuel The Pig Killer";
                 SoldierSelectedName.Location = new Point(535, 135);
             }
+
+            if (soldierName == "Marcelo")
+            {
+                this.SoldierSelectedImage.Image = Resources.Marcelo_face;
+                SoldierSelectedName.Text = "Marcelo The Iron Soldier";
+                SoldierSelectedName.Location = new Point(528, 135);
+            }
         }
 
         private void BackButton_Click(object sender, EventArgs e)

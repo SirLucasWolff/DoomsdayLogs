@@ -31,5 +31,10 @@
         {
             DoomsdayLogsForm.instance.SetTheMainScreen("Samuel");
         }
+
+        private void NextSoldierScreen_Click(object sender, EventArgs e)
+        {
+            DoomsdayLogsForm.instance.SetTheWelcomeScreen2();
+        }
     }
 }
