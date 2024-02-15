@@ -1,4 +1,5 @@
 ﻿using DoomsdayLogs.Domain.ProjectModule;
+
 using System.Configuration;
 
 namespace DoomsdayLogs.WindowsForms.Shared
@@ -11,11 +12,26 @@ namespace DoomsdayLogs.WindowsForms.Shared
         {
             List<Project> projectList = AutoFacBuilder.Register.SelectAllProjects();
 
-            if (projectList.Count == 0)
+            try
+            {
+                if (projectList.Count == 0)
+                    ProjectSelected.ProjectName = "";
+
+                if (!projectList.Exists(x => x.ProjectName == ConfigurationManager.AppSettings["LastProjectSelected"]))
+                {
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                    config.AppSettings.Settings["LastProjectSelected"].Value = "";
+
+                    config.Save(ConfigurationSaveMode.Modified);
+
+                    ConfigurationManager.RefreshSection("appSettings");
+                }
+            }
+            catch
+            {
                 ProjectSelected.ProjectName = "";
 
-            if (!projectList.Exists(x => x.ProjectName == ConfigurationManager.AppSettings["LastProjectSelected"]))
-            {
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
                 config.AppSettings.Settings["LastProjectSelected"].Value = "";
