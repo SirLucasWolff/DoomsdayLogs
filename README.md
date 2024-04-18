@@ -13,6 +13,11 @@ How to install the Doomsday Logs
 - Now you can already open Doomsday Logs, But to use the management, we have to set up the DLL.
 - Open the Visual Studio as administrator because Doomsday Logs uses the Registry editor to get some informations.
 - Getting bakc to the download path, you need to reference the DLL on your project to be able to see the logs options in your code.
+- Open the Manage Nuget Packages of you application and install the following packages.
+  - Microsoft.Bcl.AsyncInterfaces
+  - Microsoft.Extensions.Primitives
+  - Microsoft.Data.SqlClient
+- Agora você já pode utilizar a ferramenta para gerenciar os seus logs.
 
 _____________________________________________________________________________________________________________________________________
 
@@ -31,3 +36,8 @@ Como instalar o Doomsday Logs
 - Agora já é possível abrir o Doomsday Logs, mas para usar o gerenciamento, temos que configurar a DLL.
 - Abra o Visual Studio como administrador, pois o Doomsday Logs usa o editor de registro para obter algumas informações.
 - Voltando ao caminho de download, é preciso referenciar a DLL no seu projeto para poder ver as opções de logs no seu código.
+- Abra o Manage Nucket Packages da sua aplicação e instale os seguintes pacotes.
+  - Microsoft.Bcl.AsyncInterfaces
+  - Microsoft.Extensions.Primitives
+  - Microsoft.Data.SqlClient
+- Now you can use the tool to manage your logs.
