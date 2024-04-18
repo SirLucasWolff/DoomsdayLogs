@@ -53,7 +53,7 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
 
             LogDateText.Text = LogSelected.LogDateTime.ToString();
 
-            LogHelpText.Text = "https://www.notion.so/";
+            LogHelpText.Text = "https://GPT";
 
             LogDescriptionText.Text = LogSelected.LogDescription;
         }
