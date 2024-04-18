@@ -234,7 +234,7 @@
             label4.Name = "label4";
             label4.Size = new Size(140, 24);
             label4.TabIndex = 4;
-            label4.Text = "Version: 6.6.6";
+            label4.Text = "Version: 1.0.0";
             // 
             // label3
             // 

@@ -55,7 +55,7 @@ namespace DoomsdayLogs
 
         static string FindSolutionPath(string directory)
         {
-            string solutionFile = Directory.GetFiles(directory, "*.sln").FirstOrDefault();
+            string solutionFile = Directory.GetFiles(directory, "*.csproj").FirstOrDefault();
 
             if (!string.IsNullOrEmpty(solutionFile))
             {
