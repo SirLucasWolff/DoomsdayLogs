@@ -17,7 +17,7 @@ How to install the Doomsday Logs
   - Microsoft.Bcl.AsyncInterfaces
   - Microsoft.Extensions.Primitives
   - Microsoft.Data.SqlClient
-- Agora você já pode utilizar a ferramenta para gerenciar os seus logs.
+- Now you can use the tool to manage your logs.
 
 _____________________________________________________________________________________________________________________________________
 
@@ -40,4 +40,4 @@ Como instalar o Doomsday Logs
   - Microsoft.Bcl.AsyncInterfaces
   - Microsoft.Extensions.Primitives
   - Microsoft.Data.SqlClient
-- Now you can use the tool to manage your logs.
+- Agora você já pode utilizar a ferramenta para gerenciar os seus logs.
