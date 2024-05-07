@@ -10,6 +10,8 @@ How to install the Doomsday Logs
 - Extract the files.
 - Execute the Setup.exe.
 - Choise the installation settings that you want and install the Doomsday Logs.
+- When the tool is installed you need to access the install folder, open the the folder "DoomsdayLogs.DataBase\CurrentDataBase", open the properties of the databases and give 
+  permission to all the users and admin accounts.
 - Now you can already open Doomsday Logs, But to use the management, we have to set up the DLL.
 - Open the Visual Studio as administrator because Doomsday Logs uses the Registry editor to get some informations.
 - Getting bakc to the download path, you need to reference the DLL on your project to be able to see the logs options in your code.
@@ -17,6 +19,8 @@ How to install the Doomsday Logs
   - Microsoft.Bcl.AsyncInterfaces
   - Microsoft.Extensions.Primitives
   - Microsoft.Data.SqlClient
+  - System.ComponentModel.Annotations
+  - System.Drawing.Common
 - Now you can use the tool to manage your logs.
 
 _____________________________________________________________________________________________________________________________________
@@ -33,6 +37,8 @@ Como instalar o Doomsday Logs
 - Extraia o arquivo.
 - Execute o Setup.exe.
 - Escolha as configurações de instalação que deseja e instale o Doomsday Logs.
+- Depois de instalado a ferramenta acesse a pasta de instalação dela, abra a pasta "DoomsdayLogs.DataBase\CurrentDataBase" abra as propriedades dos arquivos de bancos de dados e 
+  conceda permissão para todos os usuários e contas de admin.
 - Agora já é possível abrir o Doomsday Logs, mas para usar o gerenciamento, temos que configurar a DLL.
 - Abra o Visual Studio como administrador, pois o Doomsday Logs usa o editor de registro para obter algumas informações.
 - Voltando ao caminho de download, é preciso referenciar a DLL no seu projeto para poder ver as opções de logs no seu código.
@@ -40,4 +46,6 @@ Como instalar o Doomsday Logs
   - Microsoft.Bcl.AsyncInterfaces
   - Microsoft.Extensions.Primitives
   - Microsoft.Data.SqlClient
+  - System.ComponentModel.Annotations
+  - System.Drawing.Common
 - Agora você já pode utilizar a ferramenta para gerenciar os seus logs.
