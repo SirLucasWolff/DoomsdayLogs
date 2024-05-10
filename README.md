@@ -3,7 +3,7 @@ Application to manage logs, it's very usefull while you working with logs in deb
 - DataBase to save the logs.
 - Choise of what to save about the log, for example you can choose only the name and date information of the log.
 - Projects selection, you can select the project that you want to work with the logs.
-- IA implemented, when you have a error log you can use the assistance of ChatGPT to help you to find a way to solve this problem.
+- IA being implemented, when you have a error log you can use the assistance of ChatGPT to help you to find a way to solve this problem.
 
 How to install the Doomsday Logs
 - Use the link https://drive.google.com/drive/folders/1WMLCvbOl8jaAoVEfkmzlv2174kuKBCHT?usp=sharing to download the zip file containing the Setup.exe and the DLL:
@@ -30,7 +30,7 @@ Aplicação para gerir logs, é muito útil quando se trabalha com logs em modo 
 - Base de dados para guardar os logs.
 - Escolha do que guardar sobre o log, por exemplo, pode escolher apenas o nome e a informação da data do log.
 - Seleção de projetos, pode selecionar o projeto que pretende trabalhar com os logs.
-- IA implementada, quando tem um log de erro você pode usar a assistência do ChatGPT para o ajudar a encontrar uma forma de resolver este problema.
+- IA sendo implementada, quando tem um log de erro você pode usar a assistência do ChatGPT para o ajudar a encontrar uma forma de resolver este problema.
 
 Como instalar o Doomsday Logs
 - Utilize o link https://drive.google.com/drive/folders/1WMLCvbOl8jaAoVEfkmzlv2174kuKBCHT?usp=sharing para baixar o arquivo zip que contém o Setup.exe e a DLL:
