@@ -1,7 +1,7 @@
-Application to manage logs, it's very usefull while you working with logs in debug mode and there is a lot of function like:
-- Logs management, you can create, edit, vizualize and remove the logs.
+Application to manage logs, it's very useful while you working with logs in debug mode and there is a lot of function like:
+- Logs management, you can create, edit, visualize and remove the logs.
 - DataBase to save the logs.
-- Choise of what to save about the log, for example you can choose only the name and date information of the log.
+- Choose of what to save about the log, for example you can choose only the name and date information of the log.
 - Projects selection, you can select the project that you want to work with the logs.
 - IA being implemented, when you have a error log you can use the assistance of ChatGPT to help you to find a way to solve this problem.
 
