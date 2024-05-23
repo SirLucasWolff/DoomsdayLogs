@@ -45,9 +45,22 @@
             label3 = new Label();
             label2 = new Label();
             tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            label11 = new Label();
+            TotalAvailableValue = new Label();
+            TotalUsedValue = new Label();
+            TotalGrantedValue = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            CheckKeyButton = new Button();
+            APIKeyText = new TextBox();
+            label6 = new Label();
             NotePadOptions.SuspendLayout();
             AboutTab.SuspendLayout();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // NotePadOptions
@@ -262,6 +275,7 @@
             // 
             tabControl1.Controls.Add(AboutTab);
             tabControl1.Controls.Add(NotePadOptions);
+            tabControl1.Controls.Add(tabPage1);
             tabControl1.Location = new Point(-5, 0);
             tabControl1.MaximumSize = new Size(494, 464);
             tabControl1.MinimumSize = new Size(494, 464);
@@ -269,6 +283,148 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(494, 464);
             tabControl1.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackgroundImage = Properties.Resources.Doomsday_background_image;
+            tabPage1.Controls.Add(label11);
+            tabPage1.Controls.Add(TotalAvailableValue);
+            tabPage1.Controls.Add(TotalUsedValue);
+            tabPage1.Controls.Add(TotalGrantedValue);
+            tabPage1.Controls.Add(label10);
+            tabPage1.Controls.Add(label9);
+            tabPage1.Controls.Add(label8);
+            tabPage1.Controls.Add(label7);
+            tabPage1.Controls.Add(CheckKeyButton);
+            tabPage1.Controls.Add(APIKeyText);
+            tabPage1.Controls.Add(label6);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(486, 436);
+            tabPage1.TabIndex = 3;
+            tabPage1.Text = "Open IA";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = SystemColors.ControlDark;
+            label11.Location = new Point(40, 210);
+            label11.Name = "label11";
+            label11.Size = new Size(413, 18);
+            label11.TabIndex = 22;
+            label11.Text = "_____________________________________________";
+            // 
+            // TotalAvailableValue
+            // 
+            TotalAvailableValue.AutoSize = true;
+            TotalAvailableValue.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TotalAvailableValue.ForeColor = SystemColors.ControlLightLight;
+            TotalAvailableValue.Location = new Point(157, 368);
+            TotalAvailableValue.Name = "TotalAvailableValue";
+            TotalAvailableValue.Size = new Size(0, 18);
+            TotalAvailableValue.TabIndex = 21;
+            // 
+            // TotalUsedValue
+            // 
+            TotalUsedValue.AutoSize = true;
+            TotalUsedValue.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TotalUsedValue.ForeColor = SystemColors.ControlLightLight;
+            TotalUsedValue.Location = new Point(131, 334);
+            TotalUsedValue.Name = "TotalUsedValue";
+            TotalUsedValue.Size = new Size(0, 18);
+            TotalUsedValue.TabIndex = 20;
+            // 
+            // TotalGrantedValue
+            // 
+            TotalGrantedValue.AutoSize = true;
+            TotalGrantedValue.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TotalGrantedValue.ForeColor = SystemColors.ControlLightLight;
+            TotalGrantedValue.Location = new Point(150, 301);
+            TotalGrantedValue.Name = "TotalGrantedValue";
+            TotalGrantedValue.Size = new Size(0, 18);
+            TotalGrantedValue.TabIndex = 19;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = SystemColors.ControlLightLight;
+            label10.Location = new Point(40, 368);
+            label10.Name = "label10";
+            label10.Size = new Size(111, 18);
+            label10.TabIndex = 18;
+            label10.Text = "Total Available:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = SystemColors.ControlLightLight;
+            label9.Location = new Point(40, 334);
+            label9.Name = "label9";
+            label9.Size = new Size(85, 18);
+            label9.TabIndex = 17;
+            label9.Text = "Total Used:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ControlLightLight;
+            label8.Location = new Point(40, 301);
+            label8.Name = "label8";
+            label8.Size = new Size(104, 18);
+            label8.TabIndex = 16;
+            label8.Text = "Total Granted:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ControlLightLight;
+            label7.Location = new Point(140, 253);
+            label7.Name = "label7";
+            label7.Size = new Size(186, 24);
+            label7.TabIndex = 15;
+            label7.Text = "Credits information";
+            // 
+            // CheckKeyButton
+            // 
+            CheckKeyButton.BackColor = Color.FromArgb(134, 0, 27);
+            CheckKeyButton.FlatStyle = FlatStyle.Flat;
+            CheckKeyButton.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CheckKeyButton.Location = new Point(169, 154);
+            CheckKeyButton.Name = "CheckKeyButton";
+            CheckKeyButton.Size = new Size(129, 41);
+            CheckKeyButton.TabIndex = 14;
+            CheckKeyButton.Text = "Check the Key";
+            CheckKeyButton.UseVisualStyleBackColor = false;
+            CheckKeyButton.Click += CheckKeyButton_Click;
+            // 
+            // APIKeyText
+            // 
+            APIKeyText.BackColor = Color.Black;
+            APIKeyText.BorderStyle = BorderStyle.FixedSingle;
+            APIKeyText.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            APIKeyText.ForeColor = SystemColors.Window;
+            APIKeyText.Location = new Point(40, 103);
+            APIKeyText.Name = "APIKeyText";
+            APIKeyText.Size = new Size(412, 21);
+            APIKeyText.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.ControlLightLight;
+            label6.Location = new Point(40, 55);
+            label6.Name = "label6";
+            label6.Size = new Size(411, 24);
+            label6.TabIndex = 12;
+            label6.Text = "Enter in the box your API Key from Open AI";
             // 
             // ConfigurationMenu
             // 
@@ -283,6 +439,8 @@
             AboutTab.ResumeLayout(false);
             AboutTab.PerformLayout();
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -305,5 +463,17 @@
         private Label label5;
         private Button SelectLocalPathLog;
         private CheckBox DataNameCB;
+        private TabPage tabPage1;
+        private Label label6;
+        private Button CheckKeyButton;
+        private TextBox APIKeyText;
+        private Label label8;
+        private Label label7;
+        private Label TotalAvailableValue;
+        private Label TotalUsedValue;
+        private Label TotalGrantedValue;
+        private Label label10;
+        private Label label9;
+        private Label label11;
     }
 }

@@ -1,13 +1,17 @@
 ﻿using DoomsdayLogs.WindowsForms.Shared;
-using Newtonsoft.Json;
 using System.Configuration;
+using System.Net.Http.Headers;
 using WindowsAPICodePack.Dialogs;
+using Newtonsoft.Json;
 
 namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
 {
     public partial class ConfigurationMenu : UserControl
     {
         public static List<string> checkBoxToSave;
+        static string? apiKey;
+        private static readonly HttpClient client = new HttpClient();
+        private const string usageUrl = "https://api.openai.com/v1/dashboard/billing/subscription";
 
         public ConfigurationMenu()
         {
@@ -141,6 +145,78 @@ namespace DoomsdayLogs.WindowsForms.Features.ConfigurationModule
                 config.Save(ConfigurationSaveMode.Modified);
 
                 ConfigurationManager.RefreshSection("appSettings");
+            }
+        }
+
+        private async Task LoadUsageDataAsync()
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            var usage = await GetUsageAsync();
+            if (usage != null)
+            {
+                TotalGrantedValue.Text = $"Total Granted: {usage.TotalGranted}";
+                TotalUsedValue.Text = $"Total Used: {usage.TotalUsed}";
+                TotalAvailableValue.Text = $"Total Available: {usage.TotalAvailable}";
+
+                config.AppSettings.Settings["ApiKey"].Value = apiKey;
+
+                config.Save(ConfigurationSaveMode.Modified);
+
+                ConfigurationManager.RefreshSection("appSettings");
+            }
+            else
+            {
+                TotalGrantedValue.Text = "Error fetching data.";
+                TotalUsedValue.Text = "Error fetching data.";
+                TotalAvailableValue.Text = "Error fetching data.";
+
+                if (!String.IsNullOrEmpty(config.AppSettings.Settings["ApiKey"].Value))
+                {
+                    config.AppSettings.Settings["ApiKey"].Value = "";
+
+                    config.Save(ConfigurationSaveMode.Modified);
+
+                    ConfigurationManager.RefreshSection("appSettings");
+                }
+            }
+        }
+
+        private static async Task<CreditUsageResponse> GetUsageAsync()
+        {
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue($"Bearer", apiKey);
+
+            try
+            {
+                var response = await client.GetAsync(usageUrl);
+                response.EnsureSuccessStatusCode();
+
+                var responseContent = await response.Content.ReadAsStringAsync();
+                return System.Text.Json.JsonSerializer.Deserialize<CreditUsageResponse>(responseContent);
+            }
+            catch (HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.Forbidden)
+            {
+                MessageBox.Show("Access forbidden: Please check your API key and account permissions.");
+                return null;
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show($"Request error: {ex.Message}");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+                return null;
+            }
+        }
+
+        private void CheckKeyButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(apiKey))
+            {
+                apiKey = APIKeyText.Text;
+                LoadUsageDataAsync().ConfigureAwait(false);
             }
         }
     }
