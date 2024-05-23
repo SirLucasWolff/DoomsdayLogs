@@ -1,8 +1,11 @@
 ﻿using DoomsdayLogs.Domain.LogModule;
 using DoomsdayLogs.WindowsForms.Features.ConfigurationModule;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Configuration;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 using WindowsAPICodePack.Dialogs;
 using static System.Net.WebRequestMethods;
 
@@ -11,6 +14,8 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
     public partial class DetailsLogSelected : UserControl
     {
         private Log LogSelected;
+        private static readonly HttpClient client = new HttpClient();
+        private const string apiUrl = "https://api.openai.com/v1/engines/davinci/completions";
 
         public DetailsLogSelected(Log logSelected)
         {
@@ -53,9 +58,12 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
 
             LogDateText.Text = LogSelected.LogDateTime.ToString();
 
-            LogHelpText.Text = "https://GPT";
+            LogHelpText.Text = "OpenAI Helper";
 
             LogDescriptionText.Text = LogSelected.LogDescription;
+
+            if (LogSelected.LogType == EnumLogType.Error && !String.IsNullOrEmpty(ConfigurationManager.AppSettings["ApiKey"]))
+                LogHelpText.Enabled = true;
         }
 
         private void CreateNotePadButton_Click(object sender, EventArgs e)
@@ -165,6 +173,49 @@ namespace DoomsdayLogs.WindowsForms.Features.LogModule
         {
             string folderPath = ConfigurationManager.AppSettings["LocalPathLog"];
             Process.Start("explorer.exe", folderPath);
+        }
+
+        private async Task<string> GetResponseAsync(string prompt)
+        {
+            var requestBody = new
+            {
+                prompt = prompt,
+                max_tokens = 50
+            };
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", ConfigurationManager.AppSettings["ApiKey"]);
+
+            try
+            {
+                var content = new StringContent(JsonConvert.SerializeObject(requestBody), System.Text.Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(apiUrl, content);
+                response.EnsureSuccessStatusCode();
+
+                var responseContent = await response.Content.ReadAsStringAsync();
+                dynamic jsonResponse = JsonConvert.DeserializeObject(responseContent);
+                return jsonResponse.choices[0].text;
+            }
+            catch (HttpRequestException ex) when (ex.StatusCode == System.Net.HttpStatusCode.Forbidden)
+            {
+                return "Access forbidden: Please check your API key and account permissions.";
+            }
+            catch (HttpRequestException ex)
+            {
+                return $"Request error: {ex.Message}";
+            }
+            catch (Exception ex)
+            {
+                return $"An error occurred: {ex.Message}";
+            }
+        }
+
+        private async void LogHelpText_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string responseMessage = await GetResponseAsync(LogSelected.LogDescription);
+
+            OpenIAMessager openIAMessager = new OpenIAMessager(responseMessage);
+
+            openIAMessager.Show();
         }
     }
 }

@@ -193,6 +193,7 @@
             LogHelpText.AutoSize = true;
             LogHelpText.BackColor = Color.Transparent;
             LogHelpText.DisabledLinkColor = Color.FromArgb(134, 0, 27);
+            LogHelpText.Enabled = false;
             LogHelpText.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LogHelpText.LinkColor = Color.White;
             LogHelpText.Location = new Point(95, 421);
@@ -201,6 +202,7 @@
             LogHelpText.TabIndex = 25;
             LogHelpText.TabStop = true;
             LogHelpText.Text = "linkLabel1";
+            LogHelpText.LinkClicked += LogHelpText_LinkClicked;
             // 
             // ChangeTextBoxButton
             // 
